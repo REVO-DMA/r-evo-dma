@@ -1,0 +1,120 @@
+.accountContainer {
+    margin-top: 60px !important;
+    min-width: 1000px;
+    max-width: 1000px;
+    background-color: rgba(37, 37, 37, 0.8);
+    backdrop-filter: blur(4px);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+.accountContainerSidebar {
+    width: 256px;
+    border-right: 1px solid #444444;
+    overflow: hidden;
+    box-shadow: 5px 0px 10px rgb(0, 0, 0, 0.6);
+}
+
+.accountProfilePicture {
+    width: 256px;
+    height: 256px;
+}
+
+.accountUsername {
+    font-size: 24px;
+    background-color: #333333;
+    border-top: 1px solid #444444;
+    border-bottom: 1px solid #444444;
+}
+
+.username-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 19px;
+}
+
+.accountTab {
+    font-size: 20px;
+    padding: 5px 10px;
+    background-color: #212121;
+    cursor: pointer;
+}
+
+.accountTab:hover {
+    background: linear-gradient(90deg, #00000000 0%, rgba(255, 255, 255, 0.1) 100%);
+}
+
+.accountTabActive {
+    background: linear-gradient(90deg, #00000000 0%, rgba(255, 255, 255, 0.1) 100%);
+}
+
+.accountTab:not(:last-child) {
+    border-bottom: 1px solid #444444;
+}
+
+.accountContainerMain {
+    max-height: 500px;
+    overflow: auto;
+}
+
+.accountStatsCardTitle {
+    font-size: 20px;
+    background-color: #333333;
+    padding: 5px 10px;
+}
+
+.accountStatsCard {
+    background-color: #212121;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.accountStatsCardValue {
+    font-size: 28px;
+}
+
+.referralProgramDescription {
+    line-height: 1.4;
+}
+
+.ctaLearnMore {
+    color: #00a0e9;
+    padding: 5px;
+    border-bottom: 1px solid #00a0e9;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.ctaLearnMore:hover {
+    color: #ffffff;
+    background-color: #00a0e9;
+}
+
+.accountTable {
+    --bs-table-bg: #212121;
+    --bs-table-border-color: #212121;
+    --bs-table-striped-bg: #333333;
+    border-color: #444444;
+}
+
+.membershipLevelBadge {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 10px !important;
+    width: auto;
+    border-radius: 5px 0 5px 0;
+    border: 1px solid #444444;
+    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 1px 2px #000000;
+    font-size: 20px;
+}
+
+.membershipLevelBadge_private {
+    background: linear-gradient(180deg, #ffca00, #ffa114);
+}
+
+.membershipLevelBadge_public {
+    background: linear-gradient(180deg, #721023, #4a1725);
+}

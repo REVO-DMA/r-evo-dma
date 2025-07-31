@@ -1,0 +1,8 @@
+.tippy-box {
+    background-color: var(--primary-background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-normal);
+    font-size: var(--text-size-sm);
+    line-height: 1.3;
+    border: var(--border-width-thin) solid var(--border-color);
+}

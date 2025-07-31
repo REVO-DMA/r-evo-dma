@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <!-- Splash Screen -->
+        <div class="appSplashScreen hidden" id="appSplashScreen" style="display: none">
+            <video class="appSplashScreenVideo" src="./img/evo_loading.mp4" id="appSplashScreenVideo"></video>
+        </div>
+
+        <!-- App background image -->
+        <div class="appBackground"></div>
+
+        <!-- App Version -->
+        <div class="appVersionContainer">
+            <div class="row m-0 col-auto" id="appVersionText"></div>
+        </div>
+
+        <!-- Console -->
+        <div class="consoleContainer hidden" id="consoleContainer" style="display: none; height: 32px;">
+            <div class="consoleHeader row m-0 align-items-center">
+                <!-- Console Title -->
+                <div class="consoleTitle col-auto me-3">Console</div>
+                <!-- Success Count -->
+                <div class="col-auto p-0 consoleLogCountOuter me-2" id="consoleLogCount_success" data-tippy-content="Log count: Success" style="display: none">
+                    <div class="consoleLogCountColor consoleLogCountColor_success"></div>
+                    <div class="consoleLogCountNumber" id="consoleLogCountNumber_success">0</div>
+                </div>
+                <!-- Error Count -->
+                <div class="col-auto p-0 consoleLogCountOuter me-2" id="consoleLogCount_error" data-tippy-content="Log count: Error" style="display: none">
+                    <div class="consoleLogCountColor consoleLogCountColor_error"></div>
+                    <div class="consoleLogCountNumber" id="consoleLogCountNumber_error">0</div>
+                </div>
+                <!-- info Count -->
+                <div class="col-auto p-0 consoleLogCountOuter me-2" id="consoleLogCount_info" data-tippy-content="Log count: Info" style="display: none">
+                    <div class="consoleLogCountColor consoleLogCountColor_info"></div>
+                    <div class="consoleLogCountNumber" id="consoleLogCountNumber_info">0</div>
+                </div>
+                <!-- warning Count -->
+                <div class="col-auto p-0 consoleLogCountOuter me-2" id="consoleLogCount_warning" data-tippy-content="Log count: Warning" style="display: none">
+                    <div class="consoleLogCountColor consoleLogCountColor_warning"></div>
+                    <div class="consoleLogCountNumber" id="consoleLogCountNumber_warning">0</div>
+                </div>
+                <!-- debug Count -->
+                <div class="col-auto p-0 consoleLogCountOuter me-2" id="consoleLogCount_debug" data-tippy-content="Log count: Debug" style="display: none">
+                    <div class="consoleLogCountColor consoleLogCountColor_debug"></div>
+                    <div class="consoleLogCountNumber" id="consoleLogCountNumber_debug">0</div>
+                </div>
+                <!-- plain Count -->
+                <div class="col-auto p-0 consoleLogCountOuter me-2" id="consoleLogCount_plain" data-tippy-content="Log count: Plain" style="display: none">
+                    <div class="consoleLogCountColor consoleLogCountColor_plain"></div>
+                    <div class="consoleLogCountNumber" id="consoleLogCountNumber_plain">0</div>
+                </div>
+                <!-- Total Count -->
+                <div class="col-auto p-0 consoleLogCountOuter me-2" id="consoleLogCount_total" data-tippy-content="Log count: Total">
+                    <div class="consoleLogCountColor consoleLogCountColor_total"></div>
+                    <div class="consoleLogCountNumber" id="consoleLogCountNumber_total">0</div>
+                </div>
+                <!-- Space Taker -->
+                <div class="col p-0"></div>
+                <!-- Console Controls -->
+                <!-- Jump To Present -->
+                <div class="consoleActionIconOuter col-auto p-0 me-2" id="console_jumpToPresent" data-tippy-content="Jump to present" style="display: none">
+                    <i class="fa-solid fa-circle-arrow-down consoleActionIcon"></i>
+                </div>
+                <!-- Clear -->
+                <div class="consoleActionIconOuter col-auto p-0 me-2" id="console_clear" data-tippy-content="Clear" style="display: none">
+                    <i class="fa-solid fa-circle-xmark consoleActionIcon"></i>
+                </div>
+                <!-- Visibility Toggle -->
+                <div class="consoleActionIconOuter col-auto p-0" id="console_toggleVisibility" data-tippy-content-console>
+                    <i class="fa-solid fa-eye consoleActionIcon"></i>
+                </div>
+            </div>
+            <!-- Console Element -->
+            <div class="consoleElement" id="consoleElement"></div>
+        </div>
+
+        <!-- Login Page -->
+        <div class="appContainer hidden" id="loginPageContainer" style="display: none;">
+            <div class="row m-0 p-0 justify-content-center align-items-center h-100 w-100">
+                <!-- Login Form -->
+                <div class="col-auto me-5 loginFormContainer">
+                    <!-- Logo -->
+                    <div class="row m-0 mb-3 justify-content-center align-items-center">
+                        <div class="col-auto">
+                            <img src="./img/favicon.svg" class="authLogo p-0" />
+                        </div>
+                    </div>
+
+                    <!-- Form Title -->
+                    <div class="row m-0 justify-content-center align-items-center">
+                        <div class="col-auto">
+                            <h1 id="authFormTitle"><i class="fa-duotone fa-right-to-bracket me-2"></i>Login</h1>
+                        </div>
+                    </div>
+
+                    <!-- Alerts -->
+                    <div class="row m-0 justify-content-center align-items-center" id="authAlerts" style="display: none"></div>
+
+                    <!-- Email -->
+                    <div class="row m-0 mb-3 justify-content-center align-items-center authEmail">
+                        <div class="col p-0">
+                            <label for="authEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control form-control-alt" id="authEmail" />
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="row m-0 mb-3 justify-content-center align-items-center authPassword">
+                        <div class="col p-0">
+                            <label for="authPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control form-control-alt" id="authPassword" />
+                            <div class="form-text authShowForgotPassword" id="authForgotPassword">Forgot password?</div>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="row m-0 mb-3 justify-content-center align-items-center">
+                        <div class="col-auto">
+                            <button class="btn btn-alt btn-primary btn-primary-alt authLogin" id="authLogin">Login</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Games Grid -->
+                <div class="col-6 newsContainer">
+                    <div class="container">
+                        <!-- Top Row -->
+                        <div class="row m-0 mb-4 p-0">
+                            <div class="col-4 gamesGridCard">
+                                <img src="./img/grids/eft.png" class="gamesGridImage p-0" style="border: 2px solid #336d97" />
+                            </div>
+                            <div class="col-4 gamesGridCard">
+                                <img src="./img/grids/eft-arena.png" class="gamesGridImage p-0" style="border: 2px solid #404e44" />
+                            </div>
+                            <div class="col-4 gamesGridCard">
+                                <img src="./img/grids/pubg.png" class="gamesGridImage p-0" style="border: 2px solid #d48201" />
+                            </div>
+                        </div>
+
+                        <!-- Bottom Row -->
+                        <div class="row m-0 p-0 gamesGridCard">
+                            <div class="col-4">
+                                <img src="./img/grids/cs2.png" class="gamesGridImage p-0" style="border: 2px solid #cc7915" />
+                            </div>
+                            <div class="col-4 gamesGridCard">
+                                <div class="gamesGridComingSoon" style="border-color: #b32e37">Coming Soon!</div>
+                                <img src="./img/grids/apex.jpg" class="gamesGridImage p-0" style="border: 2px solid #b32e37" />
+                            </div>
+                            <div class="col-4 gamesGridCard">
+                                <div class="gamesGridComingSoon" style="border-color: #ba3c28">Coming Soon!</div>
+                                <img src="./img/grids/rust.png" class="gamesGridImage p-0" style="border: 2px solid #ba3c28" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Select Page -->
+        <div class="appContainer hidden" id="productSelectPageContainer" style="display: none;">
+            <div class="row m-0 h-100 justify-content-center align-items-center">
+                <div class="col-9 productSelectLeftContainer">
+                    <div class="container-fluid">
+                        <div class="row m-0 mt-4 mb-4 p-0">
+                            
+                            <div class="col-6 p-0 productCardOuter">
+                                <div class="col-12 productCard">
+                                    <div class="row m-0 p-0">
+                                        <div class="col-4 p-0">
+                                            <img src="./img/grids/eft.png" class="productCardImage p-0" />
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row m-0 justify-content-center align-items-center h-100">
+                                                <div class="col-12 p-0">
+                                                    <div class="row m-0 mt-3 mb-3 p-0 justify-content-center">
+                                                        <div class="col-auto productCardGameName">EFT</div>
+                                                    </div>
+                                                    <div class="row m-0 mt-3 mb-3 p-0 justify-content-center">
+                                                        <div class="col-auto productCardStatus">
+                                                            <i class="fa-duotone fa-wave-pulse me-2"></i>Status: Available
+                                                        </div>
+                                                    </div>
+                                                    <div class="row m-0 mt-3 mb-3 p-0 justify-content-center">
+                                                        <div class="col-auto productCardLastUpdate">
+                                                            <i class="fa-duotone fa-clock me-2"></i>Updated: 1 day ago
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 p-0 productCardOuter">
+                                <div class="col-12 productCard">
+                                    <div class="row m-0 p-0">
+                                        <div class="col-4 p-0">
+                                            <img src="./img/grids/eft-arena.png" class="productCardImage p-0" />
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row m-0 justify-content-center align-items-center h-100">
+                                                <div class="col-12 p-0">
+                                                    <div class="row m-0 mt-3 mb-3 p-0 justify-content-center">
+                                                        <div class="col-auto productCardGameName">Arena</div>
+                                                    </div>
+                                                    <div class="row m-0 mt-3 mb-3 p-0 justify-content-center">
+                                                        <div class="col-auto productCardStatus">
+                                                            <i class="fa-duotone fa-wave-pulse me-2"></i>Status: Available
+                                                        </div>
+                                                    </div>
+                                                    <div class="row m-0 mt-3 mb-3 p-0 justify-content-center">
+                                                        <div class="col-auto productCardLastUpdate">
+                                                            <i class="fa-duotone fa-clock me-2"></i>Updated: 1 day ago
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 p-0 productCardOuter">
+                                <div class="col-12 productCard">
+                                    <div class="row m-0 p-0">
+                                        <div class="col-4 p-0">
+                                            <img src="./img/grids/pubg.png" class="productCardImage p-0" />
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row m-0 justify-content-center align-items-center h-100">
+                                                <div class="col-12 p-0">
+                                                    <div class="row m-0 mt-3 mb-3 p-0 justify-content-center">
+                                                        <div class="col-auto productCardGameName">PUBG</div>
+                                                    </div>
+                                                    <div class="row m-0 mt-3 mb-3 p-0 justify-content-center">
+                                                        <div class="col-auto productCardStatus">
+                                                            <i class="fa-duotone fa-wave-pulse me-2"></i>Status: Available
+                                                        </div>
+                                                    </div>
+                                                    <div class="row m-0 mt-3 mb-3 p-0 justify-content-center">
+                                                        <div class="col-auto productCardLastUpdate">
+                                                            <i class="fa-duotone fa-clock me-2"></i>Updated: 1 day ago
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 p-0 productCardOuter">
+                                <div class="col-12 productCard">
+                                    <div class="row m-0 p-0">
+                                        <div class="col-4 p-0">
+                                            <img src="./img/grids/cs2.png" class="productCardImage p-0" />
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row m-0 justify-content-center align-items-center h-100">
+                                                <div class="col-12 p-0">
+                                                    <div class="row m-0 mt-3 mb-3 p-0 justify-content-center">
+                                                        <div class="col-auto productCardGameName">CS2</div>
+                                                    </div>
+                                                    <div class="row m-0 mt-3 mb-3 p-0 justify-content-center">
+                                                        <div class="col-auto productCardStatus">
+                                                            <i class="fa-duotone fa-wave-pulse me-2"></i>Status: Available
+                                                        </div>
+                                                    </div>
+                                                    <div class="row m-0 mt-3 mb-3 p-0 justify-content-center">
+                                                        <div class="col-auto productCardLastUpdate">
+                                                            <i class="fa-duotone fa-clock me-2"></i>Updated: 1 day ago
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 p-0 productCardOuter">
+                                <div class="col-12 productCard">
+                                    <div class="row m-0 p-0">
+                                        <div class="col-4 p-0">
+                                            <img src="./img/grids/apex.jpg" class="productCardImage p-0" />
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row m-0 justify-content-center align-items-center h-100">
+                                                <div class="col-12 p-0">
+                                                    <div class="row m-0 mt-3 mb-3 p-0 justify-content-center">
+                                                        <div class="col-auto productCardGameName">Apex</div>
+                                                    </div>
+                                                    <div class="row m-0 mt-3 mb-3 p-0 justify-content-center">
+                                                        <div class="col-auto productCardStatus">
+                                                            <i class="fa-duotone fa-wave-pulse me-2"></i>Status: Available
+                                                        </div>
+                                                    </div>
+                                                    <div class="row m-0 mt-3 mb-3 p-0 justify-content-center">
+                                                        <div class="col-auto productCardLastUpdate">
+                                                            <i class="fa-duotone fa-clock me-2"></i>Updated: 1 day ago
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 p-0 productCardOuter">
+                                <div class="col-12 productCard">
+                                    <div class="row m-0 p-0">
+                                        <div class="col-4 p-0">
+                                            <img src="./img/grids/rust.png" class="productCardImage p-0" />
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row m-0 justify-content-center align-items-center h-100">
+                                                <div class="col-12 p-0">
+                                                    <div class="row m-0 mt-3 mb-3 p-0 justify-content-center">
+                                                        <div class="col-auto productCardGameName">Rust</div>
+                                                    </div>
+                                                    <div class="row m-0 mt-3 mb-3 p-0 justify-content-center">
+                                                        <div class="col-auto productCardStatus">
+                                                            <i class="fa-duotone fa-wave-pulse me-2"></i>Status: Available
+                                                        </div>
+                                                    </div>
+                                                    <div class="row m-0 mt-3 mb-3 p-0 justify-content-center">
+                                                        <div class="col-auto productCardLastUpdate">
+                                                            <i class="fa-duotone fa-clock me-2"></i>Updated: 1 day ago
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 productSelectRightContainer">
+                    <div class="productSelectRightContainerBackground"></div>
+                    <h1>Right</h1>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

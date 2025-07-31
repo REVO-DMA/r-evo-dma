@@ -1,0 +1,112 @@
+.form-control-alt {
+    padding: 6px 10px !important;
+    font-size: 18px !important;
+    line-height: 1 !important;
+    color: #ffffff !important;
+    background-color: var(--primary-background-color) !important;
+    border: var(--border-width-thin) solid var(--border-color) !important;
+    border-radius: var(--border-radius-inner) !important;
+}
+
+.form-control-alt:focus {
+    color: #ffffff !important;
+    background-color: #1a1a1a !important;
+    border-color: var(--border-color) !important;
+    box-shadow: unset !important;
+}
+
+.form-control-alt:disabled {
+    background-color: var(--primary-background-color) !important;
+    opacity: 1 !important;
+    cursor: not-allowed !important;
+}
+
+.btn-alt {
+    font-size: 18px !important;
+    padding: 10px !important;
+    line-height: 1 !important;
+    border-radius: var(--border-radius) !important;
+}
+
+.btn-primary-alt {
+    --bs-btn-color: var(--primary-background-color) !important;
+    --bs-btn-bg: var(--primary-button-color) !important;
+    --bs-btn-border-color: var(--primary-button-color) !important;
+    --bs-btn-hover-color: var(--primary-background-color) !important;
+    --bs-btn-hover-bg: var(--primary-button-hover-color) !important;
+    --bs-btn-hover-border-color: var(--primary-button-hover-color) !important;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253 !important;
+    --bs-btn-active-color: var(--primary-background-color) !important;
+    --bs-btn-active-bg: var(--primary-button-hover-color) !important;
+    --bs-btn-active-border-color: #666666 !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+    --bs-btn-disabled-color: var(--primary-background-color) !important;
+    --bs-btn-disabled-bg: var(--primary-button-color) !important;
+    --bs-btn-disabled-border-color: var(--primary-button-color) !important;
+}
+
+.loginFormContainer {
+    max-width: 390px;
+    background-color: var(--secondary-background-color);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-normal);
+    border: var(--border-width-normal) solid var(--border-color);
+}
+
+.authLogo {
+    width: 288px;
+    height: auto;
+    border-radius: var(--border-radius-inner);
+    overflow: hidden;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.8));
+}
+
+.authAlert {
+    border-radius: var(--border-radius-inner);
+    background-color: var(--primary-background-color);
+    border-left: 5px solid var(--border-color);
+    padding: 4px;
+}
+
+.authAlertError {
+    border-left-color: #e9002b;
+}
+
+.authAlertInfo {
+    border-left-color: #00a0e9;
+}
+
+.form-text.authShowForgotPassword {
+    color: #e9002b;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.gamesGridCard {
+    position: relative;
+}
+
+.gamesGridComingSoon {
+    position: absolute;
+    top: 10px;
+    left: 14px;
+    z-index: 1;
+    background-color: rgb(0 0 0 / 60%);
+    text-shadow: var(--text-shadow-small);
+    padding: 5px 10px;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    box-shadow: var(--box-shadow-normal);
+    clip-path: inset(0px -30px -30px 0);
+    font-size: var(--text-size-med);
+    border-right: var(--border-width-normal) solid;
+    border-top: var(--border-width-normal) solid;
+    border-bottom: var(--border-width-normal) solid;
+}
+
+.gamesGridImage {
+    max-height: 36vh;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-normal);
+    filter: brightness(0.9);
+}

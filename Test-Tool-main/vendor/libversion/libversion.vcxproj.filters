@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Fast-MT\Downloads\libversion-3.0.3\libversion\private\compare.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Fast-MT\Downloads\libversion-3.0.3\libversion\private\parse.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Fast-MT\Downloads\libversion-3.0.3\libversion\compare.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Fast-MT\Downloads\libversion-3.0.3\libversion\version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Fast-MT\Downloads\libversion-3.0.3\libversion\private\compare.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Fast-MT\Downloads\libversion-3.0.3\libversion\private\component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Fast-MT\Downloads\libversion-3.0.3\libversion\private\parse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Fast-MT\Downloads\libversion-3.0.3\libversion\private\string.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Fast-MT\Downloads\libversion-3.0.3\libversion\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{1F60DF61-89CA-358F-BE51-1BC305B13DD0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{BDD86296-6C90-3B29-AE46-D07ADCCC0D7A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

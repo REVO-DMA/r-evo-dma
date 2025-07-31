@@ -1,0 +1,45 @@
+.form-text {
+    color: #999999;
+}
+
+.form-control {
+    padding: 6px 10px;
+    font-size: 18px;
+    line-height: 1;
+    color: #ffffff;
+    background-color: #212121;
+    border: 1px solid #444444;
+    border-radius: 4px;
+}
+
+.form-control:focus {
+    color: #ffffff;
+    background-color: #1a1a1a;
+    border-color: #444444;
+    box-shadow: unset;
+}
+
+.form-control:disabled {
+    background-color: #212121;
+    opacity: 1;
+    cursor: not-allowed;
+}
+
+.form-select {
+    padding: 10px;
+    line-height: 1;
+    border: 1px solid #444444;
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: unset;
+    background-image: url("data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27><path fill=%27none%27 stroke=%27%23ffffff%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27m2 5 6 6 6-6%27/></svg>");
+}
+
+.form-select:focus {
+    background-color: #212121;
+    border-color: #444444;
+    outline: 0;
+    box-shadow: unset;
+}

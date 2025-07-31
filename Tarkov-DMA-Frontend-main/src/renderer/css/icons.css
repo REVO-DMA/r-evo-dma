@@ -1,0 +1,19 @@
+.buttonIcon {
+    pointer-events: none;
+}
+
+.clickableIcon {
+    cursor: pointer;
+}
+
+.clickableIcon:hover {
+    color: rgb(0, 160, 233);
+}
+
+.dropdownIcon {
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    margin-top: 8px;
+    z-index: 1;
+}

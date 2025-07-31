@@ -1,0 +1,71 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version bump'
+        required: true
+        type: choice
+        options:
+        - major
+        - minor
+        - patch
+        - prerelease
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+
+    outputs:
+      version: ${{ steps.bump.outputs.version }}
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.TOKEN }}
+        submodules: recursive
+
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Install Dependencies
+      run: |
+        cd bumper
+        yarn install --frozen-lockfile
+
+    - name: Bump version
+      id: bump
+      run: |
+        cd bumper
+        node main.js set-version ${{ inputs.version }}
+        version=v`node main.js get-version`
+        echo "::set-output name=version::$version"
+
+    - name: Commit, Tag, & Push
+      run: |
+        git config --global user.email "realphillipmroark@gmail.com"
+        git config --global user.name "RatherLogical"
+        git add package.json
+        git commit -m "[skip ci] build: release ${{ steps.bump.outputs.version }}"
+        git tag -a "${{ steps.bump.outputs.version }}" -m "Release ${{ steps.bump.outputs.version }}"
+        git push origin main --tags
+
+  release:
+    needs: bump
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - uses: ncipollo/release-action@v1
+        with:
+          name: EVO DMA API ${{ needs.bump.outputs.version }}
+          generateReleaseNotes: true
+          prerelease: ${{ contains(needs.bump.outputs.version, 'a') }}
+          tag: ${{ needs.bump.outputs.version }}
+          token: ${{ secrets.TOKEN }}

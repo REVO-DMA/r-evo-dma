@@ -1,0 +1,125 @@
+{
+	"name": "eft-dma-radar-ui",
+	"version": "3.4.0-beta",
+	"main": "./webpack-output/main/main.js",
+	"private": true,
+	"author": {
+		"name": "EVO DMA"
+	},
+	"scripts": {
+		"proto::gen": "npx buf generate",
+		"develop": "node ./build/builder.mjs dev",
+		"start": "yarn run proto::gen && yarn run clean-build && yarn run build-main && electron .",
+		"build-windows": "yarn run proto::gen && yarn run clean-build && yarn run build-main && yarn run build && electron-builder -w",
+		"format": "node formatter/main.js .prettierrc src build",
+		"protect": "node ./build/protect.js",
+		"build": "node ./build/builder.mjs prod",
+		"build-main": "node ./build/builder.mjs main",
+		"clean-build": "node ./build/builder.mjs clean",
+		"set-private": "node ./build/setBuildTarget.mjs private",
+		"set-public": "node ./build/setBuildTarget.mjs public",
+		"publish": "node ./build/publish.mjs"
+	},
+	"build": {
+		"generateUpdatesFilesForAllChannels": true,
+		"buildDependenciesFromSource": true,
+		"npmRebuild": true,
+		"productName": "EVO DMA Tarkov",
+		"copyright": "© EVO DMA",
+		"appId": "com.evo-dma.tarkov",
+		"artifactName": "${productName} ${version} PRIV.${ext}",
+		"asar": true,
+		"directories": {
+			"output": "dist/private"
+		},
+		"files": [
+			"!node_modules/**/*",
+			"!dist/**/*",
+			"!src/**/*",
+			"webpack-output/**/*"
+		],
+		"publish": {
+			"provider": "generic",
+			"url": "https://software-updates.evodma.com/eft-dma-radar-toolkit",
+			"channel": "latest",
+			"useMultipleRangeRequest": true,
+			"publishAutoUpdate": true,
+			"timeout": 12000
+		},
+		"win": {
+			"requestedExecutionLevel": "requireAdministrator",
+			"target": [
+				{
+					"target": "nsis",
+					"arch": [
+						"x64"
+					]
+				}
+			]
+		}
+	},
+	"dependencies": {
+		"@bufbuild/buf": "^1.44.0",
+		"@bufbuild/protobuf": "^2.1.0",
+		"@bufbuild/protoc-gen-es": "^2.1.0",
+		"@electron/remote": "^2.1.2",
+		"@fortawesome/fontawesome-pro": "^6.6.0",
+		"@pixi-essentials/svg": "^2.0.1",
+		"@simonwep/pickr": "^1.9.1",
+		"@sweetalert2/theme-dark": "^5.0.18",
+		"@types/uuid": "^10.0.0",
+		"add": "^2.0.6",
+		"bootstrap": "^5.3.3",
+		"clusterize.js": "^1.0.0",
+		"color": "^4.2.3",
+		"delay": "^6.0.0",
+		"electron-better-ipc": "^2.0.1",
+		"electron-updater": "^6.3.9",
+		"fuse.js": "^7.0.0",
+		"graphql": "^16.9.0",
+		"graphql-request": "^7.1.0",
+		"javascript-time-ago": "^2.5.11",
+		"lodash": "^4.17.21",
+		"lowdb": "^7.0.1",
+		"luxon": "^3.5.0",
+		"pixi-viewport": "5.0.2",
+		"pixi.js": "7.4.2",
+		"randomcolor": "^0.6.2",
+		"sanitize-filename": "^1.6.3",
+		"showdown": "^2.1.0",
+		"sweetalert2": "^11.14.1",
+		"tippy.js": "^6.3.7",
+		"uuid": "^10.0.0",
+		"youtube-search-api": "^1.2.2"
+	},
+	"devDependencies": {
+		"@types/clusterize.js": "^0.18.3",
+		"@types/color": "^3.0.6",
+		"@types/luxon": "^3.4.2",
+		"@types/randomcolor": "^0.5.9",
+		"@types/sanitize-filename": "^1.6.3",
+		"@types/showdown": "^2.0.6",
+		"ansi-colors": "^4.1.3",
+		"basic-ftp": "^5.0.5",
+		"copy-webpack-plugin": "^12.0.2",
+		"css-loader": "^7.1.2",
+		"electron": "^32.1.2",
+		"electron-builder": "^25.1.7",
+		"esbuild-loader": "3.2.0",
+		"fs-extra": "^11.2.0",
+		"html-loader": "^5.1.0",
+		"html-webpack-plugin": "^5.6.0",
+		"javascript-obfuscator": "^4.1.1",
+		"js-beautify": "^1.15.1",
+		"mini-css-extract-plugin": "^2.9.1",
+		"node-loader": "^2.0.0",
+		"sass": "^1.79.4",
+		"sass-loader": "^16.0.2",
+		"ts-loader": "^9.5.1",
+		"typescript": "^5.6.2",
+		"webpack": "^5.95.0",
+		"webpack-cli": "^5.1.4",
+		"webpack-dev-server": "^5.1.0",
+		"webpack-obfuscator": "^3.5.1"
+	}
+}

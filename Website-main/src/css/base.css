@@ -1,0 +1,35 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #212121;
+    color: #ffffff;
+    font-family: "Encode Sans", sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    width: 100vw;
+    height: 100vh;
+    line-height: 1;
+    overflow: hidden;
+}
+
+.baseContainer {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: url('../img/evoBG.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+::placeholder {
+    color: #808080 !important;
+    opacity: 1 !important;
+}

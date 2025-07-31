@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>warnings</Nullable>
+	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MemoryPack" Version="1.21.1" />
+    <PackageReference Include="PeNet" Version="4.0.5" />
+    <PackageReference Include="TerraFX.Interop.Windows" Version="10.0.26100" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="SharedMemory\" />
+  </ItemGroup>
+
+</Project>

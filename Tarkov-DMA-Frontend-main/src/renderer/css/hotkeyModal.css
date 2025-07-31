@@ -1,0 +1,70 @@
+.hotkeySelectionModalContainer {
+    max-width: 330px;
+}
+
+.boneSelectionModalContainer {
+    max-width: 380px;
+}
+
+.changeHotkeyButton {
+    padding: 5px 10px !important;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    border: 1px solid #444444;
+    cursor: pointer;
+}
+
+.changeHotkeyButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hotkeyRow {
+    padding: 10px 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.hotkeyRow:not(:last-child) {
+    border-bottom: 1px solid #444444;
+}
+
+.selectedHotkeyRow {
+    background: linear-gradient(90deg, rgba(0, 160, 233, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+    color: rgb(0, 160, 233);
+    pointer-events: none;
+}
+
+.selectedHotkeyRow > .friendlyHotkey {
+    opacity: 0.5;
+}
+
+.hotkeyRow:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.friendlyHotkey {
+    margin-top: -3px;
+    margin-bottom: 7px;
+    opacity: 0.8;
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.8));
+}
+
+kbd {
+    padding: 2px 8px;
+    box-shadow: 0 0 #d9d9d9, 0 0px #d9d9d9, 0 1px #d9d9d9, 0 2px #d9d9d9, 0 3px #d9d9d9, 0 4px #d9d9d9, 0 5px #d9d9d9, 0 6px #d9d9d9, 0 7px #d9d9d9, 0 8px #d9d9d9;
+    background-color: #fff;
+    color: #000000;
+    font-family: "Neo Sans Std";
+}
+
+.hotkeyName {
+    opacity: 0.5;
+}
+
+.friendlyBone {
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.8));
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 5px 10px;
+}

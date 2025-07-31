@@ -1,0 +1,94 @@
+.pickr {
+    width: 26px;
+    height: 18px;
+}
+
+.pickr .pcr-button {
+    position: unset;
+    padding: unset;
+    overflow: hidden;
+    background: unset;
+    width: 18px;
+    height: 18px;
+}
+
+.pickr .pcr-button:hover {
+    opacity: 0.6;
+}
+
+.pickr .pcr-button::before {
+    border-radius: 4px;
+    border: 1px solid #444444;
+}
+
+.pickr .pcr-button::after {
+    transition: none;
+    border-radius: 4px;
+    border: 1px solid #444444;
+}
+
+.pickr input:focus,
+.pickr input.pcr-active,
+.pickr button:focus,
+.pickr button.pcr-active,
+.pcr-app input:focus,
+.pcr-app input.pcr-active,
+.pcr-app button:focus,
+.pcr-app button.pcr-active {
+    box-shadow: unset;
+}
+
+.pcr-app {
+    background-color: #333333;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.7);
+}
+
+.pcr-app[data-theme="nano"] .pcr-selection {
+    grid-template-columns: 0fr 4fr;
+}
+
+.pcr-app[data-theme="nano"] .pcr-selection .pcr-color-palette .pcr-palette {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.pcr-app[data-theme="nano"] .pcr-selection .pcr-color-palette .pcr-palette::before {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: 1px solid #444444;
+}
+
+.pcr-app[data-theme="nano"] .pcr-selection .pcr-color-chooser,
+.pcr-app[data-theme="nano"] .pcr-selection .pcr-color-opacity {
+    margin: 0 0.6em 0 0;
+}
+
+.pcr-app[data-theme="nano"] .pcr-selection .pcr-color-opacity {
+    margin: 0 0.6em 0.6em 0;
+}
+
+.pcr-app[data-theme="nano"] .pcr-swatches {
+    display: none;
+}
+
+.pcr-app .pcr-interaction .pcr-result {
+    color: #ffffff;
+    transition: none;
+    border-radius: 5px;
+    background: #212121;
+    font-family: 'Neo Sans Std';
+    font-size: 18px;
+    padding: 5px 10px;
+    margin-top: 2px;
+    letter-spacing: normal;
+}
+
+.pcr-app .pcr-interaction input:focus {
+    box-shadow: unset;
+    background-color: #1a1a1a;
+}

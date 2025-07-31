@@ -1,0 +1,121 @@
+﻿@font-face {
+    font-family: "Neo Sans Std";
+    src: url({rl}www/fonts/NeoSans-Regular.woff2{/rl}) format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    text-rendering: geometricPrecision;
+    font-family: 'Neo Sans Std';
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #1a1a1a;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    margin: unset;
+    user-select: none;
+}
+
+.titlebar_outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    line-height: 100vh;
+    justify-content: left;
+    app-region: drag;
+}
+
+.titlebar_outerBlurred {
+    opacity: 0.4;
+    filter: saturate(0);
+}
+
+.titlebar_manufacturer {
+    font-size: 21px;
+    text-shadow: 0 2px 3px #000000;
+    background: linear-gradient(90deg, rgba(0, 160, 233, 0) 0%, rgb(0, 160, 233) 25%, rgb(233, 0, 43) 50%, rgb(0, 157, 50) 75%, rgba(0, 157, 50, 0) 100%);
+    padding: 0 12px;
+    margin: unset;
+    height: 100%;
+    float: left;
+}
+
+.titlebar_windowTitle {
+    font-size: 18px;
+    font-weight: 400;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0px);
+}
+
+.titlebar_controlsContainer {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    app-region: no-drag;
+    height: 100%;
+    float: right;
+}
+
+.titlebar_windowMinimizeOuter {
+    display: flex;
+    height: 100%;
+    width: 46px;
+    justify-content: center;
+}
+
+.titlebar_windowCloseOuter,
+.titlebar_windowMaximizeRestoreOuter {
+    display: flex;
+    height: 100%;
+    width: 46px;
+    justify-content: center;
+    align-items: center;
+}
+
+.titlebar_windowCloseOuter:hover {
+    background-color: rgba(232, 17, 35, 0.9);
+}
+
+.titlebar_windowMaximizeRestoreOuter:hover,
+.titlebar_windowMinimizeOuter:hover {
+    background-color: #444444;
+}
+
+.titlebar_windowMinimizeIcon,
+.titlebar_windowMaximizeRestoreIcon,
+.titlebar_windowCloseIcon,
+.titlebar_windowCloseSpinnerIcon {
+    pointer-events: none;
+    width: 15px;
+    filter: invert(1);
+}
+
+.titlebar_windowCloseSpinnerIcon {
+    animation-name: spin;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.titlebar_disabledButton {
+    pointer-events: none;
+}

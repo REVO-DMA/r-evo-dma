@@ -1,0 +1,103 @@
+.consoleContainer {
+    position: absolute;
+    bottom: 0;
+    z-index: 9;
+    height: 40vh;
+    width: 780px;
+    background-color: var(--primary-background-color);
+    box-shadow: var(--box-shadow-normal);
+    border-radius: 0 var(--border-radius) 0 0;
+    overflow: hidden;
+    border-top: 2px solid var(--border-color);
+    border-right: 2px solid var(--border-color);
+}
+
+.consoleHeader {
+    position: absolute;
+    top: 0;
+    background-color: var(--secondary-background-color);
+    width: 100%;
+    height: 32px;
+    border-bottom: 2px solid var(--border-color);
+    padding: 0 10px;
+}
+
+.consoleTitle {
+    font-size: var(--text-size-med);
+}
+
+.consoleActionIconOuter {
+    font-size: 16px;
+    transition: color 0.3s linear;
+}
+
+.consoleActionIconOuter:hover {
+    color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+.consoleActionIcon {
+    pointer-events: none;
+}
+
+.consoleElement {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: calc(100% - 10px);
+    height: calc(100% - 32px);
+}
+
+/* Console log count */
+.consoleLogCountOuter {
+    display: inline-flex;
+}
+
+.consoleLogCountColor {
+    width: 12px;
+    height: 12px;
+    margin-top: 2px;
+    margin-right: 6px;
+    border-radius: 100%;
+    box-shadow: var(--text-shadow-xs);
+}
+
+.consoleLogCountColor_success {
+    background-color: #8ae228;
+}
+
+.consoleLogCountColor_error {
+    background-color: #ef2929;
+}
+
+.consoleLogCountColor_info {
+    background-color: #569fcf;
+}
+
+.consoleLogCountColor_warning {
+    background-color: #fce939;
+}
+
+.consoleLogCountColor_debug {
+    background-color: #06989a;
+}
+
+.consoleLogCountColor_plain {
+    background-color: #eeeede;
+}
+
+.consoleLogCountColor_total {
+    background-color: #1a1a1a;
+}
+
+.consoleLogCountNumber {
+    font-family: var(--mono-font-family);
+}
+
+/* xterm overrides */
+.xterm {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

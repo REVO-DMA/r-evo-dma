@@ -1,0 +1,54 @@
+.productSelectLeftContainer {
+    overflow: auto;
+    height: 100%;
+}
+
+.productSelectRightContainer {
+    height: 100%;
+    background-color: var(--primary-background-color);
+    border-left: var(--border-width-normal) solid var(--border-color);
+    overflow: hidden;
+}
+
+.productSelectRightContainerBackground {
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.05;
+    background-image: url(../img/evo-tile-border.svg);
+    background-position: center center;
+    background-size: cover;
+    filter: blur(2px);
+}
+
+.productCardOuter {
+    position: relative;
+    padding: 10px !important;
+}
+
+.productCard {
+    background-color: var(--translucent-background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-normal);
+    border: var(--border-width-normal) solid var(--border-color);
+    backdrop-filter: blur(6px);
+    overflow: hidden;
+}
+
+.productCardImage {
+    max-height: 30vh;
+    max-width: 100%;
+    border-right: var(--border-width-normal) solid var(--border-color);
+    box-shadow: 10px 0 10px var(--box-shadow-color);
+}
+
+.productCardGameName {
+    font-size: var(--text-size-lg);
+    padding: 10px;
+    background-color: var(--primary-background-color);
+    border-radius: var(--border-radius);
+    border: var(--border-width-thin) solid var(--border-color);
+}
+
+.productCardStatus {
+    font-size: var(--text-size-med);
+}

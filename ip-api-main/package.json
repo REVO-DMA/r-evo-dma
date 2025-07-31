@@ -1,0 +1,26 @@
+{
+  "name": "ip-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/EVO-DMA/ip-api.git",
+  "author": "RatherLogical <39105734+RatherLogical@users.noreply.github.com>",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch ./src/index.ts",
+    "start": "node dist/index.js",
+    "build": "yarn run clean && tsc",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.17.0",
+    "fastify": "^4.28.1",
+    "rimraf": "^6.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.11",
+    "prisma": "^5.17.0",
+    "tsc": "^2.0.4",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  }
+}

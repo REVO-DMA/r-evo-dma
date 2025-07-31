@@ -1,0 +1,173 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<RootNamespace>Tarkov_DMA_Backend</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>annotations</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<PublishAot>true</PublishAot>
+
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+
+		<SelfContained>true</SelfContained>
+		<HighEntropyVA>true</HighEntropyVA>
+		<IlcOptimizationPreference>Speed</IlcOptimizationPreference>
+		<IlcFoldIdenticalMethodBodies>true</IlcFoldIdenticalMethodBodies>
+		<AutoreleasePoolSupport>false</AutoreleasePoolSupport>
+		<EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>
+		<EnableUnsafeUTF7Encoding>false</EnableUnsafeUTF7Encoding>
+		<EventSourceSupport>false</EventSourceSupport>
+		<HttpActivityPropagationSupport>false</HttpActivityPropagationSupport>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<MetadataUpdaterSupport>false</MetadataUpdaterSupport>
+		<UseNativeHttpHandler>true</UseNativeHttpHandler>
+		<Configurations>Debug;Release;Commercial;Commercial_Public;Release_Public</Configurations>
+		<PlatformTarget>x64</PlatformTarget>
+		<ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+		<StartupObject>Tarkov_DMA_Backend.Program</StartupObject>
+		<ApplicationIcon>include\icon.ico</ApplicationIcon>
+		<Platforms>x64</Platforms>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Debug'">
+		<DebugType>full</DebugType>
+		<UseSystemResourceKeys>false</UseSystemResourceKeys>
+		<DebuggerSupport>true</DebuggerSupport>
+		<TrimmerRemoveSymbols>false</TrimmerRemoveSymbols>
+		<IlcGenerateCompleteTypeMetadata>true</IlcGenerateCompleteTypeMetadata>
+		<IlcGenerateStackTraceData>true</IlcGenerateStackTraceData>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Release' or '$(Configuration)'=='Release_Public'">
+		<Optimize>True</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<UseSystemResourceKeys>false</UseSystemResourceKeys>
+		<DebuggerSupport>true</DebuggerSupport>
+		<TrimmerRemoveSymbols>false</TrimmerRemoveSymbols>
+		<IlcGenerateCompleteTypeMetadata>false</IlcGenerateCompleteTypeMetadata>
+		<IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Commercial' or '$(Configuration)'=='Commercial_Public'">
+		<!-- OPTIMIZATION: Potential future optimization: completely disables reflection -->
+		<!-- <IlcDisableReflection>true</IlcDisableReflection> -->
+
+		<Optimize>True</Optimize>
+		<DebugType>none</DebugType>
+		<UseSystemResourceKeys>true</UseSystemResourceKeys>
+		<DebuggerSupport>false</DebuggerSupport>
+		<TrimmerRemoveSymbols>true</TrimmerRemoveSymbols>
+		<IlcGenerateCompleteTypeMetadata>false</IlcGenerateCompleteTypeMetadata>
+		<IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
+	</PropertyGroup>
+
+	<Target Name="PublishDependency" BeforeTargets="Publish">
+		<MSBuild Projects="UpdateHelper\UpdateHelper.csproj" Targets="Publish" Properties="Configuration=Release;PublishProfile=UpdateHelper\PublishProfiles\FolderProfile.pubxml" />
+	</Target>
+
+	<ItemGroup>
+	  <Compile Remove="NativeHelper\**" />
+	  <Compile Remove="Publish\**" />
+	  <EmbeddedResource Remove="NativeHelper\**" />
+	  <EmbeddedResource Remove="Publish\**" />
+	  <None Remove="NativeHelper\**" />
+	  <None Remove="Publish\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<LinkerArg Include="/LTCG" />
+		<LinkerArg Include="/MAP:&quot;$(PublishDir)Tarkov DMA Backend_raw.map&quot;" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<DirectPInvoke Include="leechcore" />
+		<NativeLibrary Include="include\leechcore.lib" />
+
+		<DirectPInvoke Include="vmm" />
+		<NativeLibrary Include="include\vmm.lib" />
+
+		<DirectPInvoke Include="NativeHelper" />
+		<NativeLibrary Include="bin\NativeHelper\x64\$(Configuration)\NativeHelper.lib" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="CompileTimeObfuscator" Version="1.0.0">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	  <PackageReference Include="DebounceThrottle" Version="2.0.0" />
+	  <PackageReference Include="DnsClient" Version="1.8.0" />
+	  <PackageReference Include="Iced" Version="1.21.0" />
+	  <PackageReference Include="MemoryPack" Version="1.21.1" />
+	  <PackageReference Include="NickBuhro.Translit" Version="1.4.5" />
+	  <PackageReference Include="PeNet" Version="4.0.5" />
+	  <PackageReference Include="Reloaded.Assembler" Version="1.0.16" />
+	  <PackageReference Include="Sentry" Version="4.10.2" />
+	  <PackageReference Include="Sentry.Profiling" Version="4.10.2" />
+	  <PackageReference Include="SharpZipLib" Version="1.4.2" />
+	  <PackageReference Include="Silk.NET" Version="2.21.0" />
+	  <PackageReference Include="SkiaSharp" Version="2.88.8" />
+	  <PackageReference Include="TerraFX.Interop.Windows" Version="10.0.26100" />
+	  <PackageReference Include="Vmmsharp" Version="5.11.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="include\icon.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="include\Fonts\Neo Sans Std Regular.otf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>Fonts\Neo Sans Std Regular.otf</TargetPath>
+		</None>
+		<None Update="include\Fonts\Neo Sans Std Bold.otf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>Fonts\Neo Sans Std Bold.otf</TargetPath>
+		</None>
+		<None Update="FTD3XX.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="include\msdia140.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>msdia140.dll</TargetPath>
+		</None>
+		<None Update="include\leechcore.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>leechcore.dll</TargetPath>
+		</None>
+		<None Update="include\leechcore_driver.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>leechcore_driver.dll</TargetPath>
+		</None>
+		<None Update="include\vmm.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>vmm.dll</TargetPath>
+		</None>
+		<None Update="include\VirtualizerSDK64.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>VirtualizerSDK64.dll</TargetPath>
+		</None>
+		<None Update="include\evoIcon.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>evoIcon.png</TargetPath>
+		</None>
+		<None Update="include\visibilitycheck.bundle">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>visibilitycheck.bundle</TargetPath>
+		</None>
+	</ItemGroup>
+
+	<!-- output memorypack TypeScript code to directory -->
+	<ItemGroup>
+		<CompilerVisibleProperty Include="MemoryPackGenerator_TypeScriptOutputDirectory" />
+		<CompilerVisibleProperty Include="MemoryPackGenerator_TypeScriptImportExtension" />
+	</ItemGroup>
+	<PropertyGroup>
+		<MemoryPackGenerator_TypeScriptOutputDirectory>C:\Users\microPower\Documents\GitHub\Tarkov-DMA-Frontend\src\renderer\js\ipc\memorypack</MemoryPackGenerator_TypeScriptOutputDirectory>
+		<MemoryPackGenerator_TypeScriptImportExtension></MemoryPackGenerator_TypeScriptImportExtension>
+	</PropertyGroup>
+	
+</Project>

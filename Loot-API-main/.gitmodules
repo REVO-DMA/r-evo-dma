@@ -1,0 +1,3 @@
+[submodule "bumper"]
+	path = bumper
+	url = https://github.com/EVO-DMA/bumper

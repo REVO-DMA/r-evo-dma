@@ -1,0 +1,74 @@
+.chosen-value,
+.value-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.chosen-value {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #444444;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #ffffff;
+}
+
+.chosen-value::-webkit-input-placeholder {
+    color: #333;
+}
+
+.chosen-value:hover {
+    background-color: #0844eb;
+    cursor: pointer;
+}
+
+.chosen-value:hover::-webkit-input-placeholder {
+    color: #333;
+}
+
+.chosen-value:focus,
+.chosen-value.open {
+    box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
+    outline: 0;
+    background-color: #2912f7;
+    color: #000;
+}
+
+.chosen-value:focus::-webkit-input-placeholder,
+.chosen-value.open::-webkit-input-placeholder {
+    color: #000;
+}
+
+.value-list {
+    list-style: none;
+    margin-top: 34px;
+    box-shadow: 0px 5px 8px 0px rgb(0 0 0 / 20%);
+    overflow: hidden;
+    max-height: 0;
+}
+
+.value-list.open {
+    max-height: 120px;
+    overflow: auto;
+}
+
+.value-list li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.value-list li:hover {
+    background-color: #450ae9;
+    color: white;
+}
+
+.value-list li.closed {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    opacity: 0;
+}

@@ -1,0 +1,35 @@
+:root {
+    /* Brand Colors */
+    --evo-blue: #00a0e9;
+    --evo-red: #e9002b;
+    --evo-green: #009d32;
+    /* App Colors */
+    --primary-background-color: #212121;
+    --secondary-background-color: #333333;
+    --translucent-background-color: rgba(255, 255, 255, 0.1);
+    /* Text Stuff */
+    --text-color: #ffffff;
+    --font-family: "Neo Sans Std";
+    --mono-font-family: "Fira Code";
+    --text-size-xsm: 14px;
+    --text-size-sm: 16px;
+    --text-size-normal: 18px;
+    --text-size-med: 22px;
+    --text-size-lg: 26px;
+    --text-size-xlg: 32px;
+    /* Button Stuff */
+    --primary-button-color: var(--evo-blue);
+    --primary-button-hover-color: #005d88;
+    /* Border Stuff */
+    --border-color: #444444;
+    --border-width-normal: 2px;
+    --border-width-thin: 1px;
+    --border-radius: 10px;
+    --border-radius-inner: 8px;
+    /* Shadow Stuff */
+    --box-shadow-color: rgba(0, 0, 0, 0.8);
+    --box-shadow-normal: 0 5px 10px var(--box-shadow-color);
+    --text-shadow-xs: 2px 2px #000000;
+    --text-shadow-small: 2px 3px #000000;
+    --text-shadow-large: 3px 3px #000000;
+}

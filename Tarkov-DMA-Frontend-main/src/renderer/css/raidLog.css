@@ -1,0 +1,23 @@
+.raidLogLine {
+    padding: 6px !important;
+}
+
+.raidLogLine:not(:last-child) {
+    border-bottom: 1px solid #444444;
+}
+
+.enemyOnly {
+    background: linear-gradient(90deg, rgba(233, 0, 43, 0.5) 0%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
+}
+
+.teammateOnly {
+    background: linear-gradient(90deg, rgba(0, 157, 50, 0.5) 0%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
+}
+
+.teammateToEnemy {
+    background: linear-gradient(90deg, rgba(0, 157, 50, 0.5) 0%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 65%, rgba(233, 0, 43, 0.5) 100%);
+}
+
+.enemyToTeammate {
+    background: linear-gradient(90deg, rgba(233, 0, 43, 0.5) 0%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 65%, rgba(0, 157, 50, 0.5) 100%);
+}

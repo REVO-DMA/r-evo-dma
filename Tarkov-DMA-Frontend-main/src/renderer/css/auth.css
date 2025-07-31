@@ -1,0 +1,63 @@
+.loginFormContainer {
+    background: url('../img/evoBG.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.loginContainer {
+    width: 420px;
+    background-color: rgba(37, 37, 37, 0.8);
+    backdrop-filter: blur(4px);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.7);
+}
+
+.authLogo {
+    width: 480px;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.7));
+}
+
+.authAlert {
+    border-radius: 4px;
+    background-color: #212121;
+    border-left: 1px solid #444444;
+    padding: 5px 10px;
+}
+
+.authAlertError {
+    border-left-color: #e9002b;
+}
+
+.authAlertInfo {
+    border-left-color: #00a0e9;
+}
+
+.form-text.authShowForgotPassword {
+    color: #e9002b;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.passwordInput {
+    border-radius: 4px 0 0 4px;
+}
+
+.passwordVisibilityButton {
+    padding: 8px;
+    background-color: #212121;
+    border-radius: 0 4px 4px 0;
+    border-left: unset;
+    text-align: center;
+    width: 39.5px;
+    height: 36px;
+    cursor: pointer;
+}
+
+.passwordVisibilityButton:hover {
+    opacity: 0.5;
+}
+
+.authLogin_loggingIn {
+    pointer-events: none;
+}

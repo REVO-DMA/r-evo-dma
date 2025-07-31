@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Document Version="2">
+    <Protection InputFileName="bin\Release\net7.0\publish\win-x64\CS2 DMA ESP.exe" Options="499456" VMCodeSectionName=".???" VMComplexity="100" LicenseDataFileName="bin\Release\net7.0\publish\win-x64\CS2 DMA ESP.exe.vmp">
+        <Messages>
+            <Message Id="0"></Message>
+            <Message Id="1"></Message>
+            <Message Id="2"></Message>
+            <Message Id="3"></Message>
+            <Message Id="4"></Message>
+        </Messages>
+        <Folders />
+        <Procedures>
+            <Procedure MapAddress="wmain" Options="0" CompilationType="2" Complexity="100" />
+        </Procedures>
+        <Objects />
+    </Protection>
+    <DLLBox>
+        <Folders />
+        <DLL Name="dbghelp.dll" FileName="bin/Release/net7.0/publish/win-x64/dbghelp.dll" />
+        <DLL Name="evoIcon.png" FileName="bin/Release/net7.0/publish/win-x64/evoIcon.png" />
+        <DLL Name="FTD3XX.dll" FileName="bin/Release/net7.0/publish/win-x64/FTD3XX.dll" />
+        <DLL Name="glfw3.dll" FileName="bin/Release/net7.0/publish/win-x64/glfw3.dll" />
+        <DLL Name="leechcore.dll" FileName="bin/Release/net7.0/publish/win-x64/leechcore.dll" />
+        <DLL Name="libSkiaSharp.dll" FileName="bin/Release/net7.0/publish/win-x64/libSkiaSharp.dll" />
+        <DLL Name="SDL2.dll" FileName="bin/Release/net7.0/publish/win-x64/SDL2.dll" />
+        <DLL Name="symsrv.dll" FileName="bin/Release/net7.0/publish/win-x64/symsrv.dll" />
+        <DLL Name="vcruntime140.dll" FileName="bin/Release/net7.0/publish/win-x64/vcruntime140.dll" />
+        <DLL Name="vmm.dll" FileName="bin/Release/net7.0/publish/win-x64/vmm.dll" />
+        <DLL Name="Fonts\Neo Sans Std Bold.otf" FileName="bin/Release/net7.0/publish/win-x64/Fonts/Neo Sans Std Bold.otf" />
+        <DLL Name="Fonts\Neo Sans Std Regular.otf" FileName="bin/Release/net7.0/publish/win-x64/Fonts/Neo Sans Std Regular.otf" />
+    </DLLBox>
+    <Script />
+</Document>

@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <div class="row justify-content-center align-items-center m-0 p-0 appContainer loginFormContainer" id="loginFormContainer" style="display: none">
+            <!-- App Version -->
+            <div class="appVersionContainer">
+                <div class="row m-0 col-auto appVersionInnerContainer" id="loginAppVersionText"></div>
+            </div>
+
+            <!-- Logo -->
+            <div class="col-auto">
+                <div class="row m-0 pe-5 justify-content-center align-items-center">
+                    <div class="col-auto">
+                        <img src="./img/logo.svg" class="authLogo p-0" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Auth Form -->
+            <div class="col-auto mt-5 mb-5 loginContainer">
+                <!-- Form Title -->
+                <div class="row m-0 mb-4 justify-content-center align-items-center">
+                    <div class="col-auto">
+                        <h1 id="authFormTitle">Login</h1>
+                    </div>
+                </div>
+
+                <!-- Alerts -->
+                <div class="row m-0 justify-content-center align-items-center" id="authAlerts" style="display: none;"></div>
+
+                <!-- Email -->
+                <div class="row m-0 mb-3 justify-content-center align-items-center authEmail">
+                    <div class="col">
+                        <label for="authEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="authEmail" />
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="row m-0 mb-2 justify-content-center align-items-center authPassword">
+                    <div class="col">
+                        <label for="authPassword" class="form-label">Password</label>
+                        <div class="row m-0">
+                            <div class="col p-0">
+                                <input type="password" class="form-control passwordInput" id="authPassword" />
+                            </div>
+                            <div class="col-auto p-0">
+                                <div class="form-control passwordVisibilityButton" id="authPassword_visibilityToggle"><i class="fa-duotone fa-eye-slash"></i></div>
+                            </div>
+                        </div>
+                        <div class="form-text authShowForgotPassword" id="authShowForgotPassword">Forgot password?</div>
+                    </div>
+                </div>
+
+                <div class="row m-0 mb-3 justify-content-center align-items-center">
+                    <div class="col-auto">
+                        <button class="btn btn-primary authLogin" id="authLogin">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="appContainer" id="appContainer">
+            <div class="mainAppStatus" id="mainAppStatus">
+                <h1 class="m-0 mainAppStatusH1"><span id="mainAppStatusText">Loading</span><span class="loadingDots" id="loadingDots">&nbsp;</span></h1>
+            </div>
+
+            <!-- App Version -->
+            <div class="appVersionContainer">
+                <div class="row m-0 col-auto appVersionInnerContainer" id="radarAppVersionText"></div>
+            </div>
+
+            <!-- Modal Toggles -->
+            <div class="row m-0 sectionToggles" id="sectionTogglesContainer" style="display: none">
+                <!-- Buttons -->
+                <div class="col-auto p-0">
+                    <div class="row m-0">
+                        <!-- Main Menu -->
+                        <div class="col-auto p-0 me-2 sectionToggle" id="mainMenuToggle">
+                            <div class="row m-0 h-100 justify-content-center align-items-center">
+                                <div class="col-auto p-0" id="mainMenuIcon">
+                                    <i class="fa-duotone fa-house-chimney buttonIcon"></i>
+                                </div>
+                                <div class="col-auto ms-2 p-0" id="mainMenuText" style="display: none">Main Menu</div>
+                            </div>
+                        </div>
+
+                        <!-- Map Follow Mode -->
+                        <div class="col-auto p-0 me-2 sectionToggle" id="mapFollowModeToggle">
+                            <div class="row m-0 h-100 justify-content-center align-items-center">
+                                <div class="col-auto p-0" id="mapFollowModeIcon">
+                                    <i class="fa-duotone fa-arrows-to-circle buttonIcon"></i>
+                                </div>
+                                <div class="col-auto ms-2 p-0" id="mapFollowModeText" style="display: none">Map Follow</div>
+                            </div>
+                        </div>
+
+                        <!-- Loot Table -->
+                        <div class="col-auto p-0 me-2 sectionToggle" id="lootTableToggle">
+                            <div class="row m-0 h-100 justify-content-center align-items-center">
+                                <div class="col-auto p-0">
+                                    <i class="fa-duotone fa-dollar-sign buttonIcon"></i>
+                                </div>
+                                <div class="col-auto ms-2 p-0" style="display: none">Loot Table</div>
+                            </div>
+                        </div>
+
+                        <!-- Loot Filters -->
+                        <div class="col-auto p-0 me-2 sectionToggle" id="lootFiltersToggle">
+                            <div class="row m-0 h-100 justify-content-center align-items-center">
+                                <div class="col-auto p-0">
+                                    <i class="fa-duotone fa-filters buttonIcon"></i>
+                                </div>
+                                <div class="col-auto ms-2 p-0" style="display: none">Loot Filters</div>
+                            </div>
+                        </div>
+
+                        <!-- Players Table -->
+                        <div class="col-auto p-0 me-2 sectionToggle" id="playersTableToggle">
+                            <div class="row m-0 h-100 justify-content-center align-items-center">
+                                <div class="col-auto p-0">
+                                    <i class="fa-duotone fa-users buttonIcon"></i>
+                                </div>
+                                <div class="col-auto ms-2 p-0" style="display: none">Players Table</div>
+                            </div>
+                        </div>
+
+                        <!-- Killfeed -->
+                        <div class="col-auto p-0 me-2 sectionToggle" id="killfeedToggle" style="display: none">
+                            <div class="row m-0 h-100 justify-content-center align-items-center">
+                                <div class="col-auto p-0">
+                                    <i class="fa-duotone fa-skull buttonIcon"></i>
+                                </div>
+                                <div class="col-auto ms-2 p-0" style="display: none">Killfeed</div>
+                            </div>
+                        </div>
+
+                        <!-- ESP Modal -->
+                        <div class="col-auto p-0 me-2 sectionToggle" id="espSettingsModalToggle">
+                            <div class="row m-0 h-100 justify-content-center align-items-center">
+                                <div class="col-auto p-0">
+                                    <i class="fa-duotone fa-glasses buttonIcon"></i>
+                                </div>
+                                <div class="col-auto ms-2 p-0" style="display: none">ESP Settings</div>
+                            </div>
+                        </div>
+
+                        <!-- Features Modal -->
+                        <div class="col-auto p-0 me-2 sectionToggle" id="featuresModalToggle">
+                            <div class="row m-0 h-100 justify-content-center align-items-center">
+                                <div class="col-auto p-0">
+                                    <i class="fa-duotone fa-wand-magic-sparkles buttonIcon"></i>
+                                </div>
+                                <div class="col-auto ms-2 p-0" style="display: none">Feature Settings</div>
+                            </div>
+                        </div>
+
+                        <!-- App Settings Modal -->
+                        <div class="col-auto p-0 me-2 sectionToggle" id="appSettingsModalToggle">
+                            <div class="row m-0 h-100 justify-content-center align-items-center">
+                                <div class="col-auto p-0">
+                                    <i class="fa-solid fa-gear buttonIcon"></i>
+                                </div>
+                                <div class="col-auto ms-2 p-0" style="display: none">App Settings</div>
+                            </div>
+                        </div>
+
+                        <!-- Updates Modal -->
+                        <div class="col-auto p-0 sectionToggle" id="updatesModalToggle">
+                            <div class="row m-0 h-100 justify-content-center align-items-center">
+                                <div class="col-auto p-0">
+                                    <i class="fa-solid fa-arrows-rotate buttonIcon" id="updatesModalToggleIcon"></i>
+                                </div>
+                                <div class="col-auto ms-2 p-0" style="display: none">Updates</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row m-0 mt-3 justify-content-center align-items-center" id="hoveredToggleTextContainer" style="display: none;">
+                        <div class="col-auto hoveredToggleText" id="hoveredToggleText"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Menu -->
+            <div class="modalContainer mainMenu" id="mainMenu" style="display: none">
+                <div class="row m-0 align-items-center justify-content-between modalContainerTitlebar" id="mainMenuTitlebar">
+                    <div class="col-auto p-0 ms-2 modalContainerTitlebarTitle">Main Menu</div>
+                    <div class="row col-auto m-0 p-0 modalContainerTitlebarActionButtons">
+                        <div class="col-auto p-0 me-2 modalContainerTitlebarCloseButton">
+                            <i class="fa-duotone fa-circle-xmark buttonIcon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-0 modalContainerContent">
+                    <div class="row m-0 modalSettingContainer justify-content-center align-items-center membershipExpirationContainer" id="membershipExpirationContainer">
+                        <div class="col-auto p-0" id="membershipExpiration">Membership expires in --</div>
+                    </div>
+                    <div class="row m-0 modalSettingContainer">
+                        <div class="col-auto reloadRadarButton" id="mainMenu_reloadRadar"><i class="fa-duotone fa-arrows-rotate me-2"></i>Reload Radar</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loot Table -->
+            <div class="modalContainer lootTable" id="lootTable" style="display: none">
+                <div class="row m-0 align-items-center justify-content-between modalContainerTitlebar" id="lootTableTitlebar">
+                    <div class="col-auto p-0 ms-2 modalContainerTitlebarTitle">Loot Table</div>
+                    <div class="row col-auto m-0 p-0 modalContainerTitlebarActionButtons">
+                        <div class="col-auto p-0 me-2 modalContainerTitlebarCloseButton">
+                            <i class="fa-duotone fa-circle-xmark buttonIcon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-0 modalContainerContent">
+
+                    <div class="row m-0">
+                        <div class="col-auto p-0 me-3">
+                            <!-- Show Active Quest Items -->
+                            <div class="row m-0 mt-2 mb-2 align-items-center">
+                                <div class="col-auto p-0">
+                                    <div class="checkbox" id="questItemVisibility"></div>
+                                </div>
+                                <div class="col pe-0">
+                                    <div class="row m-0">
+                                        <div class="col-auto p-0">Show Active Quest Items</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-auto p-0 me-3">
+                            <!-- Show All Quest Items -->
+                            <div class="row m-0 mt-2 mb-2 align-items-center">
+                                <div class="col-auto p-0">
+                                    <div class="checkbox" id="questItems_ShowAll"></div>
+                                </div>
+                                <div class="col pe-0">
+                                    <div class="row m-0">
+                                        <div class="col-auto p-0">Show All Quest Items</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-auto p-0">
+                            <!-- Price Per Slot -->
+                            <div class="row m-0 mt-2 mb-2 align-items-center">
+                                <div class="col-auto p-0">
+                                    <div class="checkbox" id="pricePerSlot"></div>
+                                </div>
+                                <div class="col pe-0">
+                                    <div class="row m-0">
+                                        <div class="col-auto p-0">Price Per Slot</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row m-0 mb-2 mt-1 thresholdsContainers">
+                        <div class="col p-0 me-3">
+                            <!-- High Value Threshold -->
+                            <div class="row m-0 mb-2 align-items-center">
+                                <div class="col p-0">
+                                    <div class="row m-0 justify-content-center">
+                                        <div class="col-auto p-0">High Value Threshold</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-0 mb-2 align-items-center">
+                                <div class="col p-0">
+                                    <input type="text" class="form-control text-center" id="highValueThreshold" placeholder="Enter a Number" value="60000" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col p-0">
+                            <!-- Important Threshold -->
+                            <div class="row m-0 mb-2 align-items-center">
+                                <div class="col pe-0">
+                                    <div class="row m-0 justify-content-center">
+                                        <div class="col-auto p-0">Important Threshold</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-0 mb-2 align-items-center">
+                                <div class="col p-0">
+                                    <input type="text" class="form-control text-center" id="importantThreshold" placeholder="Enter a Number" value="200000" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row col-12 m-0 p-0 categoriesSection">
+                        <!-- Buttons Row - 1 -->
+                        <div class="row m-0 lootCategoryTogglesRow">
+                            <div class="col-4">
+                                <div class="col-12 lootCategoryToggle">High Value</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="col-12 lootCategoryToggle">Corpses</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="col-12 lootCategoryToggle">Gear</div>
+                            </div>
+                        </div>
+                        <!-- Buttons Row - 2 -->
+                        <div class="row m-0 lootCategoryTogglesRow">
+                            <div class="col-4">
+                                <div class="col-12 lootCategoryToggle">Weapons</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="col-12 lootCategoryToggle">Weapon Parts</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="col-12 lootCategoryToggle">Sights</div>
+                            </div>
+                        </div>
+                        <!-- Buttons Row - 3 -->
+                        <div class="row m-0 lootCategoryTogglesRow">
+                            <div class="col-4">
+                                <div class="col-12 lootCategoryToggle">Keys</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="col-12 lootCategoryToggle">Barter Items</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="row m-0 p-0">
+                                    <div class="col lootCategoryToggle lootCategoryToggleLeft">Containers</div>
+                                    <div class="col-auto lootCategoryToggle lootCategoryToggleRight"><i class="fa-duotone fa-solid fa-wrench"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Buttons Row - 4 -->
+                        <div class="row m-0 lootCategoryTogglesRow">
+                            <div class="col-4">
+                                <div class="col-12 lootCategoryToggle">Provisions</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="col-12 lootCategoryToggle">Medical Items</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="col-12 lootCategoryToggle">Other</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search -->
+                    <div class="row m-0 p-0 searchInputRow justify-content-between align-items-center" style="display: none">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Item Name" />
+                        </div>
+                        <div class="col-auto">
+                            <div class="col-auto searchButton"><i class="fa-duotone fa-magnifying-glass me-2"></i>Search</div>
+                        </div>
+                    </div>
+
+                    <!-- Item Table -->
+                    <div class="row m-0 p-0 itemsTableTable" id="itemsTableTable" style="display: none;">
+                        <table class="table table-sm table-dark table-striped table-hover table-bordered m-0">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>Actions</th>
+                                    <th>Item</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody id="itemsTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loot Filters -->
+            <div class="modalContainer lootFilters" id="lootFilters" style="display: none">
+                <div class="row m-0 align-items-center justify-content-between modalContainerTitlebar" id="lootFiltersTitlebar">
+                    <div class="col-auto p-0 ms-2 modalContainerTitlebarTitle">Loot Filters</div>
+                    <div class="row col-auto m-0 p-0 modalContainerTitlebarActionButtons">
+                        <div class="col-auto p-0 me-2 modalContainerTitlebarCloseButton">
+                            <i class="fa-duotone fa-circle-xmark buttonIcon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-0 modalContainerContent lootFiltersModalContainerContent">
+                    <!-- Items List -->
+                    <div class="col-6 p-0 h-100 lootFilterItemsListContainer">
+                        <!-- Search Input -->
+                        <div class="row m-0 align-items-center itemsListTableSearchRow">
+                            <div class="col p-0">
+                                <input type="text" class="form-control itemsListTableSearchInput" id="lootFilters_itemsListTableSearch" placeholder="Search..." />
+                            </div>
+                            <div class="col-auto p-0">
+                                <div
+                                    class="itemsListTableSearchButton itemsListTableClearSearchButton"
+                                    id="itemsListTableClearSearchButton"
+                                    data-tippy-content="Clear search results"
+                                >
+                                    <i class="fa-solid fa-xmark buttonIcon"></i>
+                                </div>
+                            </div>
+                            <div class="col-auto p-0">
+                                <div class="itemsListTableSearchButton" id="itemsListTableSearchButton" data-tippy-content="Search">
+                                    <i class="fa-duotone fa-magnifying-glass buttonIcon"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Table -->
+                        <div class="row m-0 lootFilters_ItemsTableContainer" id="lootFilters_ItemsTableContainer">
+                            <table class="table table-sm table-dark table-striped table-hover table-bordered m-0" id="lootFilters_itemsListTable">
+                                <thead class="text-center">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="lootFilters_itemsListTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Filters List/Filter Edit -->
+                    <div class="col-6 p-0 h-100">
+                        <!-- Top Bar -->
+                        <div class="row m-0 justify-content-end align-items-center itemsListsSideTopBar">
+                            <div class="col-auto p-0">
+                                <div class="row m-0">
+                                    <div class="col-auto p-0">
+                                        <div
+                                            class="itemsListTableSearchButton itemsListTableClearSearchButton"
+                                            id="lootFilters_createNewLootFilter"
+                                            data-tippy-content="Create a new Loot Filter">
+                                            <i class="fa-duotone fa-file-circle-plus buttonIcon me-2"></i>Create New
+                                        </div>
+                                    </div>
+                                    <div class="col-auto p-0">
+                                        <div class="itemsListTableSearchButton" id="lootFilters_importLootFilter" data-tippy-content="Import a Loot Filter">
+                                            <i class="fa-duotone fa-file-import buttonIcon me-2"></i>Import Existing
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filters List -->
+                        <div class="row m-0 lootFilters_itemsListsRowTop">
+                            <!-- No loot filters warning -->
+                            <div class="row m-0 h-100 justify-content-center align-items-center" id="noLootFiltersCreatedWarning" style="display: none">
+                                <div class="col-auto">No loot filters created.</div>
+                            </div>
+
+                            <!-- Table -->
+                            <div class="row m-0 p-0 lootFilters_savedFiltersList">
+                                <table class="table table-sm table-dark table-striped table-hover table-bordered m-0">
+                                    <thead class="text-center">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th></th>
+                                            <th>State</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="lootFilters_savedFiltersList"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Edit Filter -->
+                        <div class="row m-0 lootFilters_itemsListsRowBottom">
+                            <!-- No loot filter selected warning -->
+                            <div class="row m-0 h-100 justify-content-center align-items-center" id="noLootFilterSelectedWarning" style="display: none">
+                                <div class="col-auto">No loot filter selected.</div>
+                            </div>
+
+                            <!-- Selected filter settings -->
+                            <div class="row m-0 p-0 align-items-center itemsListTableSearchRow">
+                                <div class="col p-0">
+                                    <input type="text" class="form-control itemsListTableSearchInput" id="lootFilters_lootFilterNameInput" placeholder="Loot filter name" />
+                                </div>
+                                <div class="col-auto p-0">
+                                    <div
+                                        class="itemsListTableSearchButton itemsListTableClearSearchButton"
+                                        id="lootFilters_lootFilterClearAllItemsButton"
+                                        data-tippy-content="Delete all items from this Loot Filter"
+                                    >
+                                        <i class="fa-solid fa-xmark buttonIcon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-auto p-0">
+                                    <div
+                                        class="itemsListTableSearchButton itemsListTableClearSearchButton"
+                                        id="lootFilters_lootFilterDeleteButton"
+                                        data-tippy-content="Delete this Loot Filter"
+                                    >
+                                        <i class="fa-duotone fa-trash buttonIcon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-auto p-0">
+                                    <div class="itemsListTableSearchButton" id="lootFilters_lootFilterExportButton" data-tippy-content="Export this Loot Filter">
+                                        <i class="fa-duotone fa-file-export buttonIcon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0 selectedFilterSettings justify-content-center align-items-center">
+                                <div class="col-auto p-0">
+                                    <div class="row m-0 justify-content-center align-items-center">
+                                        <div class="col-auto">Main</div>
+                                        <div class="col-auto p-0">
+                                            <div class="itemFilterColorPicker_main"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto p-0">
+                                    <div class="row m-0 justify-content-center align-items-center">
+                                        <div class="col-auto">Border</div>
+                                        <div class="col-auto p-0">
+                                            <div class="itemFilterColorPicker_border"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto p-0">
+                                    <div class="row m-0 justify-content-center align-items-center">
+                                        <div class="col-auto">Text</div>
+                                        <div class="col-auto p-0">
+                                            <div class="itemFilterColorPicker_text"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Table -->
+                            <div class="row m-0 p-0 lootFilters_itemsListTable">
+                                <table class="table table-sm table-dark table-striped table-hover table-bordered m-0" id="lootFilters_itemsListTable">
+                                    <thead class="text-center">
+                                        <tr>
+                                            <th></th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="lootFilters_selectedFilterItemList"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Players Table -->
+            <div class="modalContainer playersTable" id="playersTable" style="display: none">
+                <div class="row m-0 align-items-center justify-content-between modalContainerTitlebar" id="playersTableTitlebar">
+                    <div class="col-auto p-0 ms-2 modalContainerTitlebarTitle">Players Table</div>
+                    <div class="row col-auto m-0 p-0 modalContainerTitlebarActionButtons">
+                        <div class="col-auto p-0 me-2 modalContainerTitlebarCloseButton">
+                            <i class="fa-duotone fa-circle-xmark buttonIcon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-0 modalContainerContent">
+                    <!-- No Players -->
+                    <div class="row col-12 m-0 mt-2 mb-2 justify-content-center align-items-center" id="playersTableNoPlayers">
+                        <div class="col-auto">
+                            <h3 class="m-0">No Players</h3>
+                        </div>
+                    </div>
+
+                    <!-- Table -->
+                    <table class="table table-sm table-dark table-striped table-hover table-bordered m-0" id="playersTableTable" style="display: none">
+                        <thead class="text-center">
+                            <tr>
+                                <th>Actions</th>
+                                <th>Name</th>
+                                <th>Hours</th>
+                                <th>Side</th>
+                                <th>Type</th>
+                                <th>LVL</th>
+                                <th>K/D</th>
+                                <th>S/R</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody id="playersTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Killfeed -->
+            <div class="modalContainer" id="killfeed" style="display: none">
+                <div class="row m-0 align-items-center justify-content-between modalContainerTitlebar" id="killfeedTitlebar">
+                    <div class="col-auto p-0 ms-2 modalContainerTitlebarTitle">Raid Log</div>
+                    <div class="row col-auto m-0 p-0 modalContainerTitlebarActionButtons">
+                        <div class="col-auto p-0 me-2 modalContainerTitlebarCloseButton">
+                            <i class="fa-duotone fa-circle-xmark buttonIcon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-0 modalContainerContent">
+                    <div class="row m-0 p-0 raidLogLine teammateToEnemy">
+                        <div class="col-auto raidLogIcon">
+                            <i class="fa-duotone fa-person-from-portal"></i>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-0 raidLogLine teammateOnly">
+                        <div class="col-auto raidLogIcon">
+                            <i class="fa-duotone fa-person-from-portal"></i>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-0 raidLogLine enemyToTeammate">
+                        <div class="col-auto raidLogIcon">
+                            <i class="fa-duotone fa-person-from-portal"></i>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-0 raidLogLine enemyOnly">
+                        <div class="col-auto raidLogIcon">
+                            <i class="fa-duotone fa-person-from-portal"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ESP Settings Modal -->
+            <div class="modalContainer espSettingsModal" id="espSettingsModal" style="display: none">
+                <div class="row m-0 align-items-center justify-content-between modalContainerTitlebar" id="espSettingsModalTitlebar">
+                    <div class="col-auto p-0 ms-2 modalContainerTitlebarTitle">ESP Settings</div>
+                    <div class="row col-auto m-0 p-0 modalContainerTitlebarActionButtons">
+                        <div class="col-auto p-0 me-2 modalContainerTitlebarCloseButton">
+                            <i class="fa-duotone fa-circle-xmark buttonIcon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-0 modalContainerContent" id="espSettingsContainerContent"></div>
+            </div>
+
+            <!-- Features Modal -->
+            <div class="modalContainer featuresModal" id="featuresModal" style="display: none">
+                <div class="row m-0 align-items-center justify-content-between modalContainerTitlebar" id="featuresModalTitlebar">
+                    <div class="col-auto p-0 ms-2 modalContainerTitlebarTitle">Feature Settings</div>
+                    <div class="row col-auto m-0 p-0 modalContainerTitlebarActionButtons">
+                        <div class="col-auto p-0 me-2 modalContainerTitlebarCloseButton">
+                            <i class="fa-duotone fa-circle-xmark buttonIcon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-0 p-2 modalContainerContent" id="featuresModalContainerContent"></div>
+            </div>
+
+            <!-- App Settings Modal -->
+            <div class="modalContainer appSettingsModal" id="appSettingsModal" style="display: none">
+                <div class="row m-0 align-items-center justify-content-between modalContainerTitlebar" id="appSettingsModalTitlebar">
+                    <div class="col-auto p-0 ms-2 modalContainerTitlebarTitle">App Settings</div>
+                    <div class="row col-auto m-0 p-0 modalContainerTitlebarActionButtons">
+                        <div class="col-auto p-0 me-2 modalContainerTitlebarCloseButton">
+                            <i class="fa-duotone fa-circle-xmark buttonIcon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-0 modalContainerTabs" id="appSettingsModalContainerTabs" style="display: none"></div>
+                <div class="row m-0 modalContainerContent" id="appSettingsModalContainerContent"></div>
+            </div>
+
+            <!-- Updates Modal -->
+            <div class="modalContainer updatesModal" id="updatesModal" style="display: none">
+                <div class="row m-0 align-items-center justify-content-between modalContainerTitlebar" id="updatesModalTitlebar">
+                    <div class="col-auto p-0 ms-2 modalContainerTitlebarTitle">Updates</div>
+                    <div class="row col-auto m-0 p-0 modalContainerTitlebarActionButtons">
+                        <div class="col-auto p-0 me-2 modalContainerTitlebarCloseButton">
+                            <i class="fa-duotone fa-circle-xmark buttonIcon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-0 modalContainerContent">
+                    <div class="row m-0 p-0 pt-3 justify-content-center align-items-center" id="updateChannelDescription_Latest" style="display: none;">
+                        <div class="col-auto">
+                            <div class="row m-0 installedVersionStatusContainer">
+                                <div class="col-auto installedVersionStatusBadge"><i class="fa-duotone fa-solid fa-info"></i></div>
+                                <div class="col updateChannelDescriptionText">The Stable update channel contains thoroughly tested updates and should provide the best experience to you under most circumstances.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row m-0 p-0 pt-3 justify-content-center align-items-center" id="updateChannelDescription_Beta" style="display: none;">
+                        <div class="col-auto">
+                            <div class="row m-0 installedVersionStatusContainer">
+                                <div class="col-auto installedVersionStatusBadge"><i class="fa-duotone fa-solid fa-info"></i></div>
+                                <div class="col updateChannelDescriptionText">The Beta update channel contains partially tested updates that may still be a bit unstable or are not complete yet.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row m-0 p-0 pt-3 justify-content-center align-items-center" id="updateChannelDescription_Alpha" style="display: none;">
+                        <div class="col-auto">
+                            <div class="row m-0 installedVersionStatusContainer">
+                                <div class="col-auto installedVersionStatusBadge"><i class="fa-duotone fa-solid fa-info"></i></div>
+                                <div class="col updateChannelDescriptionText">The Alpha update channel contains the very latest untested updates and may be extremely unstable. The Beta release channel is used by testers to find and report specific bugs with new features so that updates can be moved to the Beta channel.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row m-0 p-0 pt-3 justify-content-center align-items-center">
+                        <div class="col-auto">Release Channel</div>
+                        <div class="col">
+                            <select class="form-select" id="selectedReleaseChannel">
+                                <option value="latest">Stable</option>
+                                <option value="beta">Beta</option>
+                                <option value="alpha">Alpha</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row m-0 p-0 pt-3 pb-3 justify-content-center align-items-center">
+                        <div class="col-auto reloadRadarButton" id="updaterButton">
+                            <div class="row m-0">
+                                <div class="col-auto p-0" id="updaterButtonIcon">
+                                    <i class="fa-duotone fa-arrows-rotate me-2"></i>
+                                </div>
+                                <div class="col p-0" id="updaterButtonText">
+                                    Check For Updates
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

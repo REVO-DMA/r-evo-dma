@@ -1,0 +1,23 @@
+.btn {
+    font-size: 18px;
+    padding: 10px;
+    line-height: 1;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    --bs-btn-color: #ffffff;
+    --bs-btn-bg: #333333;
+    --bs-btn-border-color: #444444;
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: #444444;
+    --bs-btn-hover-border-color: #444444;
+    --bs-btn-focus-shadow-rgb: 130, 138, 145;
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: #444444;
+    --bs-btn-active-border-color: #444444;
+    --bs-btn-active-shadow: unset;
+    --bs-btn-disabled-color: #fffdfd;
+    --bs-btn-disabled-bg: #212121;
+    --bs-btn-disabled-border-color: #212121;
+}

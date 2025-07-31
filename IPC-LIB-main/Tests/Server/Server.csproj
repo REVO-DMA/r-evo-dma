@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>warnings</Nullable>
+		<Platforms>x64</Platforms>
+
+		<IlcOptimizationPreference>Speed</IlcOptimizationPreference>
+		<IlcFoldIdenticalMethodBodies>true</IlcFoldIdenticalMethodBodies>
+		<AutoreleasePoolSupport>false</AutoreleasePoolSupport>
+		<EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>
+		<EnableUnsafeUTF7Encoding>false</EnableUnsafeUTF7Encoding>
+		<EventSourceSupport>false</EventSourceSupport>
+		<HttpActivityPropagationSupport>false</HttpActivityPropagationSupport>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<MetadataUpdaterSupport>false</MetadataUpdaterSupport>
+		<UseNativeHttpHandler>true</UseNativeHttpHandler>
+		<GenerateRuntimeConfigurationFiles>false</GenerateRuntimeConfigurationFiles>
+		<Configurations>Debug;Release</Configurations>
+		<PlatformTarget>x64</PlatformTarget>
+		<Platforms>x64</Platforms>
+		<ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+		<SelfContained>true</SelfContained>
+		<HighEntropyVA>true</HighEntropyVA>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+		<PublishAot>false</PublishAot>
+		<IlcDisableReflection>false</IlcDisableReflection>
+		<DebugType>full</DebugType>
+		<UseSystemResourceKeys>false</UseSystemResourceKeys>
+		<DebuggerSupport>true</DebuggerSupport>
+		<TrimmerRemoveSymbols>false</TrimmerRemoveSymbols>
+		<IlcGenerateCompleteTypeMetadata>true</IlcGenerateCompleteTypeMetadata>
+		<IlcGenerateStackTraceData>true</IlcGenerateStackTraceData>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<PublishAot>true</PublishAot>
+		<IlcDisableReflection>true</IlcDisableReflection>
+		<Optimize>True</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<UseSystemResourceKeys>true</UseSystemResourceKeys>
+		<DebuggerSupport>false</DebuggerSupport>
+		<TrimmerRemoveSymbols>true</TrimmerRemoveSymbols>
+		<IlcGenerateCompleteTypeMetadata>false</IlcGenerateCompleteTypeMetadata>
+		<IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Publish\**" />
+	  <EmbeddedResource Remove="Publish\**" />
+	  <None Remove="Publish\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\IPC-LIB.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,103 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net7.0-windows</TargetFramework>
+		<RootNamespace>Private_Overlay</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<PublishAot>true</PublishAot>
+		<AssemblyName>SLOBS Helper</AssemblyName>
+
+		<IlcOptimizationPreference>Speed</IlcOptimizationPreference>
+		<AutoreleasePoolSupport>false</AutoreleasePoolSupport>
+		<EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>
+		<EnableUnsafeUTF7Encoding>false</EnableUnsafeUTF7Encoding>
+		<EventSourceSupport>false</EventSourceSupport>
+		<HttpActivityPropagationSupport>false</HttpActivityPropagationSupport>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<MetadataUpdaterSupport>false</MetadataUpdaterSupport>
+		<UseNativeHttpHandler>true</UseNativeHttpHandler>
+		<Configurations>Debug;Release;Commercial</Configurations>
+		<PlatformTarget>x64</PlatformTarget>
+		<Platforms>x64</Platforms>
+		<ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+		<StartupObject>Private_Overlay.Program</StartupObject>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+		<DebugType>full</DebugType>
+		<UseSystemResourceKeys>false</UseSystemResourceKeys>
+		<DebuggerSupport>true</DebuggerSupport>
+		<TrimmerRemoveSymbols>false</TrimmerRemoveSymbols>
+		<IlcGenerateCompleteTypeMetadata>true</IlcGenerateCompleteTypeMetadata>
+		<IlcGenerateStackTraceData>true</IlcGenerateStackTraceData>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<Optimize>True</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<UseSystemResourceKeys>false</UseSystemResourceKeys>
+		<DebuggerSupport>true</DebuggerSupport>
+		<TrimmerRemoveSymbols>false</TrimmerRemoveSymbols>
+		<IlcGenerateCompleteTypeMetadata>false</IlcGenerateCompleteTypeMetadata>
+		<IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Commercial'">
+		<!-- OPTIMIZATION: Potential future optimization: completely disables reflection -->
+		<!-- <IlcDisableReflection>true</IlcDisableReflection> -->
+
+		<Optimize>True</Optimize>
+		<DebugType>none</DebugType>
+		<UseSystemResourceKeys>true</UseSystemResourceKeys>
+		<DebuggerSupport>false</DebuggerSupport>
+		<TrimmerRemoveSymbols>true</TrimmerRemoveSymbols>
+		<IlcGenerateCompleteTypeMetadata>false</IlcGenerateCompleteTypeMetadata>
+		<IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Private Overlay Pool\**" />
+	  <Compile Remove="x64\**" />
+	  <EmbeddedResource Remove="Private Overlay Pool\**" />
+	  <EmbeddedResource Remove="x64\**" />
+	  <None Remove="Private Overlay Pool\**" />
+	  <None Remove="x64\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Kokuban" Version="0.2.0" />
+		<PackageReference Include="MemoryPack" Version="1.10.0" />
+		<PackageReference Include="Silk.NET" Version="2.19.0" />
+		<PackageReference Include="SkiaSharp" Version="2.88.6" />
+		<PackageReference Include="TerraFX.Interop.Windows" Version="10.0.22621.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ContentWithTargetPath Include="x64\Release\SLOBS Pool Helper.dll">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<TargetPath>SLOBS Pool Helper.dll</TargetPath>
+		</ContentWithTargetPath>
+		<None Update="Fonts\Neo Sans Std Regular.otf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Fonts\Neo Sans Std Bold.otf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="game_overlay.node">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PrivateSdkAssemblies Remove="x64\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <FrameworkAssemblies Remove="x64\**" />
+	</ItemGroup>
+
+</Project>

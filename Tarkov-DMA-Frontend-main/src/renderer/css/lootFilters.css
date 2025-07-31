@@ -1,0 +1,91 @@
+.lootFilters {
+    width: 1150px;
+    height: 65vh;
+}
+
+.lootFiltersModalContainerContent {
+    height: calc(65vh - 30px);
+}
+
+.lootFilterItemsListContainer {
+    border-right: 1px solid #444444;
+}
+
+.lootFilters_ItemsTableContainer {
+    max-height: calc(100% - 33px);
+    overflow: auto;
+}
+
+.lootFilters_itemsListButton {
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #444444;
+    padding: 0 6px;
+}
+
+.lootFilters_itemsListButton:hover {
+    background: linear-gradient(90deg, rgba(0, 160, 233, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+    color: rgb(0, 160, 233);
+    cursor: pointer;
+}
+
+.itemsListTableSearchRow {
+    border-bottom: 1px solid #444444;
+    border-left: 1px solid #444444;
+}
+
+.itemsListsSideTopBar {
+    border-bottom: 1px solid #444444;
+}
+
+.lootFilters_itemsListsRowTop {
+    height: calc(40% - 16.5px);
+    border-bottom: 1px solid #444444;
+}
+
+.lootFilters_itemsListsRowBottom {
+    height: calc(60% - 16.5px);
+}
+
+.itemsListTableSearchInput {
+    border-radius: 0;
+    border: unset;
+    border-right: 1px solid #444444;
+}
+
+.itemsListTableClearSearchButton {
+    border-right: 1px solid #444444;
+}
+
+.itemsListTableSearchButton {
+    padding: 7px 10px;
+    height: 32px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.itemsListTableSearchButton:hover {
+    background: linear-gradient(90deg, rgba(0, 160, 233, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+    color: rgb(0, 160, 233);
+    cursor: pointer;
+}
+
+.selectedFilterSettings {
+    height: 26px;
+    background-color: #333333;
+    border-bottom: 1px solid #444444;
+}
+
+.lootFilters_savedFiltersList {
+    height: 100%;
+    overflow: auto;
+}
+
+.lootFilters_itemsListTable {
+    height: calc(100% - 59px);
+    overflow: auto;
+}
+
+.lootFilters_savedFiltersListActiveFilter {
+    background: linear-gradient(90deg, rgba(0, 160, 233, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+}

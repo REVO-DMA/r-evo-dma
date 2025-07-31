@@ -1,0 +1,141 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<RootNamespace>gzw_dma_backend</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>warnings</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+		<IlcOptimizationPreference>Speed</IlcOptimizationPreference>
+		<IlcFoldIdenticalMethodBodies>true</IlcFoldIdenticalMethodBodies>
+		<AutoreleasePoolSupport>false</AutoreleasePoolSupport>
+		<EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>
+		<EnableUnsafeUTF7Encoding>false</EnableUnsafeUTF7Encoding>
+		<EventSourceSupport>false</EventSourceSupport>
+		<HttpActivityPropagationSupport>false</HttpActivityPropagationSupport>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<MetadataUpdaterSupport>false</MetadataUpdaterSupport>
+		<UseNativeHttpHandler>true</UseNativeHttpHandler>
+		<GenerateRuntimeConfigurationFiles>false</GenerateRuntimeConfigurationFiles>
+		<Configurations>Debug;Release;Commercial</Configurations>
+		<PlatformTarget>x64</PlatformTarget>
+		<Platforms>x64</Platforms>
+		<ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+		<StartupObject>gzw_dma_backend.Program</StartupObject>
+		<ApplicationIcon>icon.ico</ApplicationIcon>
+		<SelfContained>true</SelfContained>
+		<HighEntropyVA>true</HighEntropyVA>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+		<PublishAot>false</PublishAot>
+		<IlcDisableReflection>false</IlcDisableReflection>
+		<DebugType>full</DebugType>
+		<UseSystemResourceKeys>false</UseSystemResourceKeys>
+		<DebuggerSupport>true</DebuggerSupport>
+		<TrimmerRemoveSymbols>false</TrimmerRemoveSymbols>
+		<IlcGenerateCompleteTypeMetadata>true</IlcGenerateCompleteTypeMetadata>
+		<IlcGenerateStackTraceData>true</IlcGenerateStackTraceData>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<PublishAot>true</PublishAot>
+		<IlcDisableReflection>true</IlcDisableReflection>
+		<Optimize>True</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<UseSystemResourceKeys>false</UseSystemResourceKeys>
+		<DebuggerSupport>true</DebuggerSupport>
+		<TrimmerRemoveSymbols>false</TrimmerRemoveSymbols>
+		<IlcGenerateCompleteTypeMetadata>false</IlcGenerateCompleteTypeMetadata>
+		<IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Commercial'">
+		<PublishAot>true</PublishAot>
+		<IlcDisableReflection>true</IlcDisableReflection>
+		<Optimize>True</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<UseSystemResourceKeys>true</UseSystemResourceKeys>
+		<DebuggerSupport>false</DebuggerSupport>
+		<TrimmerRemoveSymbols>true</TrimmerRemoveSymbols>
+		<IlcGenerateCompleteTypeMetadata>false</IlcGenerateCompleteTypeMetadata>
+		<IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+	  <WarningLevel>3</WarningLevel>
+	  <NoWarn>1701;1702;IDE0301;IDE0028;IDE0057;IDE0090;IDE0300;IDE0074</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+	  <WarningLevel>3</WarningLevel>
+	  <NoWarn>1701;1702;IDE0301;IDE0028;IDE0057;IDE0090;IDE0300;IDE0074</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Commercial|x64'">
+	  <WarningLevel>3</WarningLevel>
+	  <NoWarn>1701;1702;IDE0301;IDE0028;IDE0057;IDE0090;IDE0300;IDE0074</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<LinkerArg Include="/MAP:&quot;$(PublishDir)\GZW DMA Backend.map&quot;" />
+		<LinkerArg Include="/MAP:&quot;$(PublishDir)\GZW DMA Backend_protected.map&quot;" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="icon.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="DebounceThrottle" Version="2.0.0" />
+	  <PackageReference Include="FileWatcherEx" Version="2.6.0" />
+	  <PackageReference Include="Kokuban" Version="0.2.0" />
+	  <PackageReference Include="Silk.NET" Version="2.21.0" />
+	  <PackageReference Include="SkiaSharp" Version="2.88.8" />
+	  <PackageReference Include="TerraFX.Interop.Windows" Version="10.0.22621.6" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<DirectPInvoke Include="leechcore" />
+		<NativeLibrary Include="include\leechcore.lib" />
+
+		<DirectPInvoke Include="vmm" />
+		<NativeLibrary Include="include\vmm.lib" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="include\leechcore.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>leechcore.dll</TargetPath>
+		</None>
+		<None Update="include\leechcore_driver.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>leechcore_driver.dll</TargetPath>
+		</None>
+		<None Update="include\vmm.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>vmm.dll</TargetPath>
+		</None>
+		<None Update="FTD3XX.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Fonts\Neo Sans Std Regular.otf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Fonts\Neo Sans Std Bold.otf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="evoIcon.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="GZW DMA Backend.vmp" Visible="false" />
+		<None Update="FTD3XX.dll" Visible="false" />
+		<None Update="evoIcon.png" Visible="false" />
+	</ItemGroup>
+
+</Project>

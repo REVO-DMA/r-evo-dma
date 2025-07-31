@@ -1,0 +1,43 @@
+.appHeader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    background-color: rgba(37, 37, 37, 0.8);
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    backdrop-filter: blur(4px);
+}
+
+.headerLogo {
+    height: 100% !important;
+    height: auto;
+    overflow: hidden;
+    filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.8));
+    clip-path: inset(0px -30px 0px -30px);
+}
+
+.pageTitle {
+    font-size: 28px;
+}
+
+.headerNav {
+    height: 100%;
+    cursor: pointer;
+}
+
+.headerNav:not(:last-child) {
+    border-right: 1px solid #444444;
+}
+
+.headerNav:hover {
+    background-color: #333333;
+}
+
+.headerNavInner {
+    pointer-events: none;
+}
+
+.headerNavActive {
+    background-color: #333333;
+}

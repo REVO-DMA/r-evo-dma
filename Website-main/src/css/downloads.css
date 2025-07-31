@@ -1,0 +1,17 @@
+.downloadsContainer {
+    margin-top: 120px !important;
+    margin-bottom: 60px !important;
+    min-width: 1000px;
+    max-width: 1000px;
+    background-color: rgba(37, 37, 37, 0.8);
+    backdrop-filter: blur(4px);
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+.downloadsMainImage {
+    max-width: 300px;
+    overflow: hidden;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.7));
+}

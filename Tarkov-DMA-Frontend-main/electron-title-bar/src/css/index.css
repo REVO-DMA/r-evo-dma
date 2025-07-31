@@ -1,0 +1,124 @@
+@font-face {
+    font-family: 'dzltest';
+    src: url('../fonts/dzltest.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: block;
+}
+
+.titlebar_outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 30px;
+    line-height: 30px;
+    justify-content: left;
+    z-index: 1200;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid #444444;
+    color: #ffffff;
+    user-select: none;
+}
+
+.titlebar_applicationDrag {
+    top: 0;
+    left: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    z-index: 1;
+    -webkit-app-region: drag;
+}
+
+.titlebar_manufacturer {
+    -webkit-app-region: no-drag;
+    height: 100%;
+    float: left;
+    font-family: "dzltest";
+    font-size: 19px;
+    margin-left: 12px;
+}
+
+.titlebar_windowTitle {
+    font-size: 18px;
+    font-weight: 400;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0px);
+}
+
+.titlebar_controlsContainer {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    -webkit-app-region: no-drag;
+    height: 100%;
+    float: right;
+}
+
+.titlebar_windowMinimizeOuter {
+    display: flex;
+    height: 100%;
+    width: 46px;
+    justify-content: center;
+}
+
+.titlebar_windowCloseOuter,
+.titlebar_windowMaximizeRestoreOuter {
+    display: flex;
+    height: 100%;
+    width: 46px;
+    justify-content: center;
+    align-items: center;
+}
+
+.titlebar_windowCloseOuter:hover {
+    background-color: rgba(232, 17, 35, 0.9);
+}
+
+.titlebar_windowMaximizeRestoreOuter:hover,
+.titlebar_windowMinimizeOuter:hover {
+    background-color: #444444;
+}
+
+.titlebar_windowMinimizeIcon,
+.titlebar_windowMaximizeRestoreIcon,
+.titlebar_windowCloseIcon,
+.titlebar_windowCloseSpinnerIcon {
+    pointer-events: none;
+    width: 14px;
+    filter: invert(1);
+}
+
+.titlebar_windowCloseSpinnerIcon {
+    animation-name: spin;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.titlebar_applicationResizer {
+    -webkit-app-region: no-drag;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 2px;
+}
+
+.titlebar_disabledButton {
+    pointer-events: none;
+}

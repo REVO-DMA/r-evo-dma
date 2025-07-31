@@ -1,0 +1,52 @@
+.legalContainer {
+    margin-top: 120px !important;
+    margin-bottom: 60px !important;
+    min-width: 1000px;
+    max-width: 1000px;
+}
+
+.legalTextContainer {
+    margin-top: 120px !important;
+    margin-bottom: 60px !important;
+    min-width: 1000px;
+    max-width: 1000px;
+    background-color: rgba(37, 37, 37, 0.8);
+    backdrop-filter: blur(4px);
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.7);
+    padding: 20px 10px !important;
+}
+
+.legalSectionCard {
+    background-color: rgba(37, 37, 37, 0.8);
+    backdrop-filter: blur(4px);
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}
+
+.legalCardBlurb {
+    height: 108px;
+}
+
+details {
+    border: 1px solid #444444 !important;
+    border-radius: 4px;
+    padding: 0.5em 0.5em 0;
+    margin-bottom: 10px;
+}
+
+summary {
+    font-weight: bold;
+    margin: -0.5em -0.5em 0;
+    padding: 0.5em;
+}
+
+details[open] {
+    padding: 0.5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #444444;
+    margin-bottom: 0.5em;
+}

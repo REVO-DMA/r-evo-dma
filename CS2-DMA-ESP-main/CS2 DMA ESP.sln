@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS2 DMA ESP", "CS2 DMA ESP.csproj", "{1BAD53BC-69EF-4AF9-B2EA-5B397D5158D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Commercial|x64 = Commercial|x64
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BAD53BC-69EF-4AF9-B2EA-5B397D5158D0}.Commercial|x64.ActiveCfg = Commercial|x64
+		{1BAD53BC-69EF-4AF9-B2EA-5B397D5158D0}.Debug|x64.ActiveCfg = Debug|x64
+		{1BAD53BC-69EF-4AF9-B2EA-5B397D5158D0}.Debug|x64.Build.0 = Debug|x64
+		{1BAD53BC-69EF-4AF9-B2EA-5B397D5158D0}.Release|x64.ActiveCfg = Release|x64
+		{1BAD53BC-69EF-4AF9-B2EA-5B397D5158D0}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8244B77D-64BE-4B1C-BA89-5C73968BA1EA}
+	EndGlobalSection
+EndGlobal

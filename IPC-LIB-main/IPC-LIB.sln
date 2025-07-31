@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPC-LIB", "IPC-LIB.csproj", "{5C3B24EE-5B16-4468-A070-35A4F91F4478}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Tests\Server\Server.csproj", "{0D4EE9A1-428B-42F6-82BA-08DD3EE661CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Tests\Client\Client.csproj", "{BC72532E-2F2B-488E-B128-7B76A9BACA61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C3B24EE-5B16-4468-A070-35A4F91F4478}.Debug|x64.ActiveCfg = Debug|x64
+		{5C3B24EE-5B16-4468-A070-35A4F91F4478}.Debug|x64.Build.0 = Debug|x64
+		{5C3B24EE-5B16-4468-A070-35A4F91F4478}.Release|x64.ActiveCfg = Release|x64
+		{5C3B24EE-5B16-4468-A070-35A4F91F4478}.Release|x64.Build.0 = Release|x64
+		{0D4EE9A1-428B-42F6-82BA-08DD3EE661CD}.Debug|x64.ActiveCfg = Debug|x64
+		{0D4EE9A1-428B-42F6-82BA-08DD3EE661CD}.Debug|x64.Build.0 = Debug|x64
+		{0D4EE9A1-428B-42F6-82BA-08DD3EE661CD}.Release|x64.ActiveCfg = Release|x64
+		{0D4EE9A1-428B-42F6-82BA-08DD3EE661CD}.Release|x64.Build.0 = Release|x64
+		{BC72532E-2F2B-488E-B128-7B76A9BACA61}.Debug|x64.ActiveCfg = Debug|x64
+		{BC72532E-2F2B-488E-B128-7B76A9BACA61}.Debug|x64.Build.0 = Debug|x64
+		{BC72532E-2F2B-488E-B128-7B76A9BACA61}.Release|x64.ActiveCfg = Release|x64
+		{BC72532E-2F2B-488E-B128-7B76A9BACA61}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {320CD86B-6500-4CF4-AF3D-B9C2E1FE6870}
+	EndGlobalSection
+EndGlobal

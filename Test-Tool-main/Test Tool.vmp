@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Document Version="2">
+    <Protection InputFileName="Build\x64\Release\EVO DMA Test Tool.exe" Options="295168" VMCodeSectionName=".???" LicenseDataFileName="Build\x64\Release\EVO DMA Test Tool.exe.vmp">
+        <Messages>
+            <Message Id="0"></Message>
+            <Message Id="1"></Message>
+            <Message Id="2">This file is corrupted! Please redownload it and try again.</Message>
+            <Message Id="3"></Message>
+            <Message Id="4"></Message>
+        </Messages>
+        <Folders />
+        <Procedures />
+        <Objects />
+    </Protection>
+    <DLLBox>
+        <Folders />
+        <DLL Name="FTD3XX.dll" FileName="Build/x64/Release/FTD3XX.dll" />
+        <DLL Name="leechcore.dll" FileName="Build/x64/Release/leechcore.dll" />
+        <DLL Name="libversion.dll" FileName="Build/x64/Release/libversion.dll" />
+        <DLL Name="vmm.dll" FileName="Build/x64/Release/vmm.dll" />
+        <DLL Name="leechcore_driver.dll" FileName="Build/x64/Release/leechcore_driver.dll" />
+    </DLLBox>
+    <Script />
+</Document>

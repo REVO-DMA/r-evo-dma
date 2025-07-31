@@ -1,0 +1,41 @@
+{
+	"name": "loot-api",
+	"version": "1.0.18",
+	"main": "./dist/index.js",
+	"repository": "https://github.com/EVO-DMA/Loot-API.git",
+	"author": "RatherLogical <39105734+RatherLogical@users.noreply.github.com>",
+	"private": true,
+	"scripts": {
+		"dev": "concurrently \"tsc -p tsconfig.json --watch\" \"nodemon\"",
+		"build": "yarn run graphql-codegen && tsc -p tsconfig.json",
+		"publish": "yarn run build && node ./build/builder.js prod"
+	},
+	"dependencies": {
+		"@badrap/result": "^0.2.13",
+		"@fastify/type-provider-typebox": "^4.1.0",
+		"@sinclair/typebox": "^0.33.7",
+		"@urql/core": "^5.0.6",
+		"basic-ftp": "^5.0.5",
+		"fastify": "^4.28.1",
+		"fastify-ip": "^1.0.0",
+		"fs-extra": "^11.2.0",
+		"luxon": "^3.5.0",
+		"node-cron": "^3.0.3"
+	},
+	"devDependencies": {
+		"@graphql-codegen/cli": "^5.0.2",
+		"@graphql-codegen/client-preset": "^4.3.3",
+		"@graphql-typed-document-node/core": "^3.2.0",
+		"@types/fs-extra": "^11.0.4",
+		"@types/luxon": "^3.4.2",
+		"@types/node": "^22.4.1",
+		"@types/node-cron": "^3.0.11",
+		"chalk": "4.1.2",
+		"concurrently": "^8.2.2",
+		"graphql": "^16.9.0",
+		"nodemon": "^3.1.4",
+		"ssh2": "^1.15.0",
+		"ssh2-sftp-client": "^11.0.0",
+		"typescript": "^5.5.4"
+	}
+}

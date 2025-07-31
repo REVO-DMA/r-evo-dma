@@ -1,0 +1,33 @@
+{
+  "name": "enigma-builder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json && Xcopy .\\src\\worker.js .\\dist /Y",
+    "start": "node ./dist/index.js"
+  },
+  "dependencies": {
+    "@fastify/rate-limit": "^9.1.0",
+    "@fastify/static": "^7.0.2",
+    "@fastify/type-provider-json-schema-to-ts": "^3.0.0",
+    "axios": "^1.6.8",
+    "fastify": "^4.26.2",
+    "fastify-ip": "^1.0.0",
+    "fs-extra": "^11.2.0",
+    "luxon": "^3.4.4",
+    "node-cron": "^3.0.3",
+    "sanitize-filename": "^1.6.3",
+    "uuid": "^9.0.1",
+    "worker-farm": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/luxon": "^3.4.2",
+    "@types/node": "^20.11.30",
+    "@types/node-cron": "^3.0.11",
+    "@types/uuid": "^9.0.8",
+    "json-schema-to-ts": "^3.0.1",
+    "typescript": "^5.4.3"
+  }
+}

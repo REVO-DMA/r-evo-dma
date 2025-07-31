@@ -1,0 +1,79 @@
+/* Fix Background artifacts on alert icon */
+.swal2-icon.swal2-success [class^="swal2-success-circular-line"][class$="left"] {
+    background-color: transparent !important;
+}
+
+.swal2-icon.swal2-success [class^="swal2-success-circular-line"][class$="right"] {
+    background-color: transparent !important;
+}
+
+.swal2-icon.swal2-success .swal2-success-fix {
+    background-color: transparent !important;
+}
+
+.swal2-container.swal2-center {
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(3px);
+}
+
+.swal2-popup {
+    background-color: #212121;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.swal2-html-container {
+    color: #ffffff !important;
+    font-size: 18px !important;
+}
+
+.swal2-container.swal2-center > .swal2-popup > .swal2-title {
+    font-size: 32px !important;
+}
+
+/* Icon Styles */
+
+/* Warning */
+.swal2-icon.swal2-warning {
+    border: 2px solid transparent !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+}
+
+/* Error */
+.swal2-icon.swal2-error {
+    border: 2px solid transparent !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+}
+
+.swal2-icon.swal2-error [class^="swal2-x-mark-line"] {
+    background-color: #ffffff !important;
+}
+
+/* Success */
+.swal2-icon.swal2-success {
+    border: unset;
+}
+
+.swal2-icon.swal2-success .swal2-success-ring {
+    border: 2px solid #ffffff !important;
+}
+
+.swal2-icon.swal2-success [class^="swal2-success-line"] {
+    background-color: #ffffff !important;
+}
+
+/* Info */
+.swal2-icon.swal2-info {
+    border: 2px solid transparent !important;
+    border-color: #ffffff !important;
+    color: #077bff !important;
+}
+
+/* Question */
+.swal2-icon.swal2-question {
+    border: 2px solid transparent !important;
+    border-color: #ffffff !important;
+    color: #077bff !important;
+}

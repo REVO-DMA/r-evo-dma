@@ -1,0 +1,117 @@
+@font-face {
+    font-family: "Neo Sans Std";
+    src: url("../fonts/NeoSans-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Neo Sans Std";
+    src: url("../fonts/NeoSans-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Neo Sans Std";
+    src: url("../fonts/NeoSans-Bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: "Neo Sans Std";
+    text-rendering: geometricPrecision;
+    font-size: 18px;
+    line-height: 1;
+    color: #ffffff;
+    background-color: #212121;
+}
+
+p {
+    margin: unset;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+option {
+    font-family: "Neo Sans Std";
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+:not(input):not(textarea),
+:not(input):not(textarea)::after,
+:not(input):not(textarea)::before {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444444;
+}
+
+.titlebar_manufacturer {
+    font-family: "Neo Sans Std" !important;
+    font-size: 21px !important;
+    text-shadow: 0 2px 3px #000000;
+    margin: unset !important;
+    padding: 0 12px !important;
+    background: linear-gradient(90deg, rgba(0, 160, 233, 0) 0%, #146b93 25%, #8b1329 50%, #14692f 75%, rgba(0, 157, 50, 0) 100%) !important;
+}
+
+.appContainer {
+    position: relative;
+    margin-top: 30px !important;
+    height: calc(100vh - 30px);
+    width: 100vw;
+    overflow: hidden;
+}
+
+.mainAppStatus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 0 3px 3px #000000;
+    background-color: #212121;
+    border-radius: 5px;
+    padding: 10px 50px;
+}
+
+.mainAppStatusH1 {
+    white-space: nowrap;
+}
+
+.loadingDots {
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+}
+
+.appVersionContainer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 14px;
+    text-shadow: 0 2px 2px #000000;
+    width: auto;
+}
+
+.appVersionInnerContainer {
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #212121;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.8);
+}

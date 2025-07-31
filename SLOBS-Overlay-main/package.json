@@ -1,0 +1,47 @@
+{
+  "name": "@streamlabs/game_overlay",
+  "private": true,
+  "description": "Streamlabs Game Overlay module",
+  "gypfile": true,
+  "main": "npm/index.js",
+  "typings": "npm/typings.d.ts",
+  "author": {
+    "name": "Streamlabs",
+    "url": "https://streamlabs.com"
+  },
+  "version": "0.0.40",
+  "license": "SEE LICENSE IN COPYRIGHT LAW",
+  "engines": {
+    "node": ">= 14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stream-labs/streamlabs-overlay"
+  },
+  "scripts": {
+    "pack": "node scripts/pack.js",
+    "test": "",
+    "get-version": "echo %npm_package_version%"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 100,
+    "endOfLine": "lf",
+    "trailingComma": "all"
+  },
+  "devDependencies": {
+    "@types/node": "12.7.2",
+    "electron": "25.9.3",
+    "fs-extra": "9.0.0",
+    "prettier": "1.16.4",
+    "minimist":"1.2.6",
+    "colors": "^1.4.0",
+    "fs": "^0.0.1-security",
+    "node-addon-api": "^7.0.0",
+    "path": "^0.12.7",
+    "shelljs": "^0.8.5",
+    "tar": "6.1.11"
+  },
+  "dependencies": {
+  }
+}

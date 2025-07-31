@@ -1,0 +1,89 @@
+@font-face {
+    font-family: "Neo Sans Std";
+    src: url("../fonts/NeoSans-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Neo Sans Std";
+    src: url("../fonts/NeoSans-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Neo Sans Std";
+    src: url("../fonts/NeoSans-Bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fira Code VF";
+    src: url("../fonts/FiraCode-VF.woff2") format("woff2-variations");
+    font-weight: 300 700;
+    font-style: normal;
+}
+
+body {
+    font-family: var(--font-family);
+    text-rendering: optimizeSpeed;
+    font-size: var(--text-size-normal);
+    line-height: 1;
+    color: var(--text-color);
+    background-color: var(--primary-background-color);
+    overflow: hidden;
+}
+
+p {
+    margin: unset;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+:not(input):not(textarea),
+:not(input):not(textarea)::after,
+:not(input):not(textarea)::before {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+img {
+    -webkit-user-drag: none;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+}
+
+.appBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.05;
+    background-image: url('../img/evo-tile.svg');
+    background-position: center center;
+    background-size: cover;
+    filter: blur(5px);
+}
+
+.appContainer {
+    position: relative;
+    margin-top: 30px;
+    height: calc(100vh - 30px);
+    width: 100vw;
+    overflow: hidden;
+}

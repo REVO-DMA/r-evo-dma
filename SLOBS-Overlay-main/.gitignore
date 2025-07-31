@@ -1,0 +1,16 @@
+build/
+settings.cfg
+.vs/
+pids
+logs
+results
+lib/binding
+*.tgz
+npm-debug.log
+node_modules/
+.idea/
+.vscode/
+dist/
+streamlabs_game_overlay*.tar.gz
+yarn-error.log
+game-overlay-v*z

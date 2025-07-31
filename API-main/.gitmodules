@@ -1,0 +1,6 @@
+[submodule "formatter"]
+	path = formatter
+	url = https://github.com/EVO-DMA/formatter
+[submodule "bumper"]
+	path = bumper
+	url = https://github.com/EVO-DMA/bumper

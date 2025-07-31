@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Document Version="2">
+    <Protection InputFileName="../Publish/GZW DMA Backend.exe" Options="495360" VMCodeSectionName=".???" VMComplexity="100">
+        <Messages>
+            <Message Id="0" />
+            <Message Id="1" />
+            <Message Id="2" />
+            <Message Id="3" />
+            <Message Id="4" />
+        </Messages>
+        <Folders />
+        <Procedures>
+            <Procedure MapAddress="wmain" Options="0" CompilationType="2" Complexity="100" />
+        </Procedures>
+        <Objects />
+    </Protection>
+    <DLLBox>
+        <Folders />
+        <DLL Name="FTD3XX.dll" FileName="../Publish/FTD3XX.dll" />
+        <DLL Name="leechcore.dll" FileName="../Publish/leechcore.dll" />
+        <DLL Name="leechcore_driver.dll" FileName="../Publish/leechcore_driver.dll" />
+        <DLL Name="vmm.dll" FileName="../Publish/vmm.dll" />
+        <DLL Name="glfw3.dll" FileName="../Publish/glfw3.dll" />
+        <DLL Name="libSkiaSharp.dll" FileName="../Publish/libSkiaSharp.dll" />
+        <DLL Name="SDL2.dll" FileName="../Publish/SDL2.dll" />
+        <DLL Name="Fonts\Neo Sans Std Bold.otf" FileName="../Publish/Fonts/Neo Sans Std Bold.otf" />
+        <DLL Name="Fonts\Neo Sans Std Regular.otf" FileName="../Publish/Fonts/Neo Sans Std Regular.otf" />
+        <DLL Name="evoIcon.png" FileName="../Publish/evoIcon.png" />
+    </DLLBox>
+    <Script />
+    <LicenseManager />
+</Document>

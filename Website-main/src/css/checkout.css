@@ -1,0 +1,54 @@
+.checkoutContainer {
+    margin-top: 120px !important;
+    margin-bottom: 60px !important;
+    min-width: 1000px;
+    max-width: 1000px;
+    background-color: rgba(37, 37, 37, 0.8);
+    backdrop-filter: blur(4px);
+    padding: 15px !important;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+.checkoutSummary {
+    font-size: 28px;
+}
+
+.checkoutSectionHeader {
+    font-size: 22px;
+    margin-bottom: 14px !important;
+}
+
+.checkoutProduct {
+    border-top: 1px solid #444444;
+    border-bottom: 1px solid #444444;
+}
+
+.checkoutItemIcon {
+    width: 42px;
+    height: 42px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.checkoutPriceTotal {
+    border-top: 1px solid #444444;
+}
+
+.checkoutErrorsContainer {
+    background-color: #212121;
+    border-radius: 10px;
+    padding: 10px !important;
+    color: #e9002b;
+    border-left: 2px solid #e9002b;
+}
+
+.addressElementContainer {
+    border-bottom: 1px solid #444444;
+    margin-bottom: 14px !important;
+}
+
+.addressElement {
+    margin-bottom: 20px;
+}

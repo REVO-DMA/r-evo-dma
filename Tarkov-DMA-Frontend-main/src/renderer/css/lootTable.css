@@ -1,0 +1,84 @@
+.lootTable {
+    max-width: 500px;
+}
+
+.thresholdsContainers {
+    border-top: 1px solid #444444;
+    padding-top: 10px;
+}
+
+.categoriesSection {
+    border-top: 1px solid #444444;
+}
+
+.lootCategoryTogglesRow {
+    margin-top: 12px !important;
+}
+
+.lootCategoryTogglesRow:last-child {
+    margin-bottom: 12px !important;
+}
+
+.lootCategoryToggle {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: 1px solid #444444;
+    text-align: center;
+}
+
+.lootCategoryToggleLeft {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.lootCategoryToggleRight {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left: unset !important;
+}
+
+.lootCategoryToggle:hover {
+    background: linear-gradient(90deg, rgba(0, 160, 233, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+    color: rgb(0, 160, 233);
+    cursor: pointer;
+}
+
+.lootCategoryToggleActive {
+    color: rgb(0, 160, 233);
+}
+
+.lootCategoryTogglesRow > .col-4:first-child {
+    padding-left: unset;
+}
+
+.lootCategoryTogglesRow > .col-4:last-child {
+    padding-right: unset;
+}
+
+.lootCategoryTogglesRow > .col-4:nth-child(2) {
+    padding: unset;
+}
+
+.searchButton {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #444444;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.searchInputRow {
+    border-top: 1px solid #444444;
+    border-bottom: 1px solid #444444;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+}
+
+.itemsTableTable {
+    max-height: 25vh;
+    overflow: auto;
+}
+
+.configureContainerCategoriesModalContainer {
+    width: 300px;
+}

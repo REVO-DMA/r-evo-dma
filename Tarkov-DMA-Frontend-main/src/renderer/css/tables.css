@@ -1,0 +1,31 @@
+.table-dark {
+    --bs-table-color: #fff;
+    --bs-table-bg: rgba(255, 255, 255, 0.1);
+    --bs-table-border-color: #444444;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.5);
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: rgb(255, 255, 255);
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: rgba(255, 255, 255, 0.3);
+    --bs-table-hover-color: #fff;
+    color: var(--bs-table-color);
+    border-color: var(--bs-table-border-color);
+    text-shadow: 0 1px 2px #000000;
+}
+
+.table-bordered > :not(caption) > * {
+    border-top: unset;
+}
+
+tbody > tr:last-child {
+    border-bottom: unset;
+}
+
+.table-active > * {
+    --bs-table-accent-bg: var(--bs-table-hover-bg) !important;
+    color: var(--bs-table-hover-color) !important;
+}
+
+.table > :not(caption) > * > * {
+    box-shadow: unset;
+}

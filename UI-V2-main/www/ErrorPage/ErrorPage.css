@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Neo Sans Std";
+    src: url({rl}www/fonts/NeoSans-Regular.woff2{/rl}) format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    text-rendering: geometricPrecision;
+    font-family: 'Neo Sans Std';
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #212121;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    margin: unset;
+    user-select: none;
+}
+
+.center-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

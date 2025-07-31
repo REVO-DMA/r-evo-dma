@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup Label="Globals">
+	  <WebView2LoaderPreference>Static</WebView2LoaderPreference>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<RootNamespace>UI_V2</RootNamespace>
+		<Nullable>warnings</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<StartupObject>UI_V2.Program</StartupObject>
+		<ApplicationIcon>icon.ico</ApplicationIcon>
+		<PlatformTarget>x64</PlatformTarget>
+
+		<ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="icon.ico" />
+	  <None Remove="www\css\bootstrap-grid.css" />
+	  <None Remove="www\css\bootstrap-reboot.css" />
+	  <None Remove="www\css\bootstrap.css" />
+	  <None Remove="www\ErrorPage.html" />
+	  <None Remove="www\ErrorPage\ErrorPage.css" />
+	  <None Remove="www\ErrorPage\ErrorPage.js" />
+	  <None Remove="www\fonts\NeoSans-Bold.woff2" />
+	  <None Remove="www\fonts\NeoSans-Light.woff2" />
+	  <None Remove="www\fonts\NeoSans-Regular.woff2" />
+	  <None Remove="www\TopBar\img\close.svg" />
+	  <None Remove="www\TopBar\img\maximize.svg" />
+	  <None Remove="www\TopBar\img\minimize.svg" />
+	  <None Remove="www\TopBar\img\restore.svg" />
+	  <None Remove="www\TopBar\img\spinner.svg" />
+	  <None Remove="www\TopBar\TopBar.css" />
+	  <None Remove="www\TopBar\TopBar.html" />
+	  <None Remove="www\TopBar\TopBar.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="icon.ico" />
+	  <EmbeddedResource Include="www\css\bootstrap-grid.css" />
+	  <EmbeddedResource Include="www\css\bootstrap-reboot.css" />
+	  <EmbeddedResource Include="www\css\bootstrap.css" />
+	  <EmbeddedResource Include="www\ErrorPage\ErrorPage.css" />
+	  <EmbeddedResource Include="www\ErrorPage\ErrorPage.html" />
+	  <EmbeddedResource Include="www\ErrorPage\ErrorPage.js" />
+	  <EmbeddedResource Include="www\fonts\NeoSans-Bold.woff2" />
+	  <EmbeddedResource Include="www\fonts\NeoSans-Light.woff2" />
+	  <EmbeddedResource Include="www\fonts\NeoSans-Regular.woff2" />
+	  <EmbeddedResource Include="www\TopBar\img\close.svg" />
+	  <EmbeddedResource Include="www\TopBar\img\maximize.svg" />
+	  <EmbeddedResource Include="www\TopBar\img\minimize.svg" />
+	  <EmbeddedResource Include="www\TopBar\img\restore.svg" />
+	  <EmbeddedResource Include="www\TopBar\img\spinner.svg" />
+	  <EmbeddedResource Include="www\TopBar\TopBar.css" />
+	  <EmbeddedResource Include="www\TopBar\TopBar.html" />
+	  <EmbeddedResource Include="www\TopBar\TopBar.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2478.35" />
+		<PackageReference Include="Silk.NET" Version="2.21.0" />
+		<PackageReference Include="TerraFX.Interop.Windows" Version="10.0.22621.6" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Properties\" />
+	  <Folder Include="www\Shared\css\" />
+	</ItemGroup>
+
+</Project>

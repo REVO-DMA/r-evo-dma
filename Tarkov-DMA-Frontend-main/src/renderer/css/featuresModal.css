@@ -1,0 +1,35 @@
+.featuresModal {
+    max-width: 300px;
+    top: 50px;
+    left: 50px;
+}
+
+.featureSeparator {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 5px 0 !important;
+    border-radius: 4px;
+}
+
+.featureSeparator:hover {
+    background: linear-gradient(90deg, rgba(0, 160, 233, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+    color: rgb(0, 160, 233);
+    cursor: pointer;
+}
+
+.featureSeparatorContentAlwaysWhite {
+    color: #ffffff;
+}
+
+.unavailableFeature {
+    text-decoration: line-through;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.veryRiskyFeature {
+    background: radial-gradient(circle, rgba(255, 0, 0, 1) 0%, rgba(255, 0, 0, 0.5) 75%, rgba(0, 0, 0, 0) 100%);
+}
+
+.configureHitboxesModalContainer {
+    width: 510px;
+}

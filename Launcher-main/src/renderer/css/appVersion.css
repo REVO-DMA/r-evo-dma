@@ -1,0 +1,8 @@
+.appVersionContainer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    font-size: var(--text-size-xsm);
+    text-shadow: var(--text-shadow-xs);
+}

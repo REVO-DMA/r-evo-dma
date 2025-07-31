@@ -1,0 +1,16 @@
+hr {
+    margin: unset;
+    margin-bottom: 5px;
+}
+
+ol {
+    margin: unset;
+}
+
+ul {
+    margin: unset;
+}
+
+::placeholder {
+    color: #ffffff !important;
+}

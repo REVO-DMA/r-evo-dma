@@ -1,0 +1,11 @@
+prefix=C:/Program Files (x86)/libversion
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libversion
+Description: Version comparison library
+Version: 3.0.3
+Libs: -L${libdir} -lversion
+Cflags: -I${includedir}
+Cflags.private: -DLIBVERSION_STATIC_DEFINE

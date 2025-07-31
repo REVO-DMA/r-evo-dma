@@ -1,0 +1,109 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<RootNamespace>pubg_dma_esp</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>warnings</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<PublishAot>true</PublishAot>
+
+		<IlcOptimizationPreference>Speed</IlcOptimizationPreference>
+		<IlcFoldIdenticalMethodBodies>true</IlcFoldIdenticalMethodBodies>
+		<AutoreleasePoolSupport>false</AutoreleasePoolSupport>
+		<EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>
+		<EnableUnsafeUTF7Encoding>false</EnableUnsafeUTF7Encoding>
+		<EventSourceSupport>false</EventSourceSupport>
+		<HttpActivityPropagationSupport>false</HttpActivityPropagationSupport>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<MetadataUpdaterSupport>false</MetadataUpdaterSupport>
+		<UseNativeHttpHandler>true</UseNativeHttpHandler>
+		<GenerateRuntimeConfigurationFiles>false</GenerateRuntimeConfigurationFiles>
+		<Configurations>Debug;Release;Commercial</Configurations>
+		<PlatformTarget>x64</PlatformTarget>
+		<Platforms>x64</Platforms>
+		<ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+		<StartupObject>pubg_dma_esp.Program</StartupObject>
+		<ApplicationIcon>include\icon.ico</ApplicationIcon>
+		<SelfContained>true</SelfContained>
+		<HighEntropyVA>true</HighEntropyVA>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+		<DebugType>full</DebugType>
+		<UseSystemResourceKeys>false</UseSystemResourceKeys>
+		<DebuggerSupport>true</DebuggerSupport>
+		<TrimmerRemoveSymbols>false</TrimmerRemoveSymbols>
+		<IlcGenerateCompleteTypeMetadata>true</IlcGenerateCompleteTypeMetadata>
+		<IlcGenerateStackTraceData>true</IlcGenerateStackTraceData>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<PublishAot>true</PublishAot>
+		<IlcDisableReflection>true</IlcDisableReflection>
+		<Optimize>True</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<UseSystemResourceKeys>false</UseSystemResourceKeys>
+		<DebuggerSupport>true</DebuggerSupport>
+		<TrimmerRemoveSymbols>false</TrimmerRemoveSymbols>
+		<IlcGenerateCompleteTypeMetadata>false</IlcGenerateCompleteTypeMetadata>
+		<IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Commercial'">
+		<PublishAot>true</PublishAot>
+		<IlcDisableReflection>true</IlcDisableReflection>
+		<Optimize>True</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<UseSystemResourceKeys>true</UseSystemResourceKeys>
+		<DebuggerSupport>false</DebuggerSupport>
+		<TrimmerRemoveSymbols>true</TrimmerRemoveSymbols>
+		<IlcGenerateCompleteTypeMetadata>false</IlcGenerateCompleteTypeMetadata>
+		<IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<LinkerArg Include="/MAP:&quot;$(PublishDir)PUBG DMA ESP_raw.map&quot;" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Silk.NET" Version="2.20.0" />
+	  <PackageReference Include="SkiaSharp" Version="2.88.7" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="include\icon.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="include\Fonts\Neo Sans Std Regular.otf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>Fonts\Neo Sans Std Regular.otf</TargetPath>
+		</None>
+		<None Update="include\Fonts\Neo Sans Std Bold.otf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>Fonts\Neo Sans Std Bold.otf</TargetPath>
+		</None>
+		<None Update="FTD3XX.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="include\leechcore.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>leechcore.dll</TargetPath>
+		</None>
+		<None Update="include\leechcore_driver.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>leechcore_driver.dll</TargetPath>
+		</None>
+		<None Update="include\vmm.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>vmm.dll</TargetPath>
+		</None>
+		<None Update="include\evoIcon.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>evoIcon.png</TargetPath>
+		</None>
+	</ItemGroup>
+
+</Project>
